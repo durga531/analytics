@@ -213,6 +213,12 @@ class GuardTests(unittest.TestCase):
         self.assertEqual(code, 2)
         self.assertIn("M2", err)
 
+    def test_mandate_line_itself_is_allowed(self):
+        code, _, err = self.write("04-Invest/prompt.md",
+                                  "Verdicts only BUY, ACCUMULATE, HOLD, WATCH or AVOID. No sell, trim, exit, reduce, "
+                                  "stop-loss or tax-loss suggestions on existing holdings.")
+        self.assertEqual(code, 0, err)
+
     def test_existing_topic_folder_is_invest_scope(self):
         code, _, _ = self.write("Economics and Investing/ABC.md", "Consider a stop-loss at 1,200.")
         self.assertEqual(code, 2)

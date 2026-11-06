@@ -167,9 +167,16 @@ def check_em_dash(text, where=""):
     return out
 
 
+NEGATED = re.compile(
+    r"(?i)\b(no|never|not|without|nor|don't|do not|must not|retired|banned)\b[^.;]{0,90}?"
+    r"\b(sell|trim|exit|reduce|stop[\s-]?loss|tax[\s-]loss|profit)")
+
+
 def check_equity(text, where=""):
     out = []
     for i, line in enumerate(text.splitlines(), 1):
+        if NEGATED.search(line):
+            continue  # the mandate stated as a prohibition, not a suggestion
         for rx, label in ((VERDICT_FIELD, "sell-type verdict"), (UPPER_VERDICT, "sell-type verdict"),
                           (HOLDING_ACTION, "sell, trim, exit or reduce suggestion"),
                           (PROFIT_TAKING, "profit-taking or exit suggestion"),
