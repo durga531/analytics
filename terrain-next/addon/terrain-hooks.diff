@@ -1,0 +1,74 @@
+1361c1361
+<       window.innerWidth <= 900 && ot("right");
+---
+>       window.innerWidth <= 900 && window.dispatchEvent(new CustomEvent("terrain:picked", { detail: { name: (pe.pin || "") + "" || fe(pe.district) } }));
+1368c1368
+<       window.innerWidth <= 900 && ot("right");
+---
+>       window.innerWidth <= 900 && window.dispatchEvent(new CustomEvent("terrain:picked", { detail: { name: (pe.pin || "") + "" || fe(pe.district) } }));
+1377c1377
+<       window.innerWidth <= 900 && ot("right");
+---
+>       window.innerWidth <= 900 && window.dispatchEvent(new CustomEvent("terrain:picked", { detail: { name: (pe.pin || "") + "" || fe(pe.district) } }));
+2837a2838,2861
+>     (function () {
+>       const k = Math.min(10, l.length),
+>         keys = Object.keys(s).filter((x) => s[x] > 0),
+>         N = 300,
+>         cnt = new Map();
+>       let seed = 7;
+>       const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+>       for (let d = 0; d < N && keys.length; d++) {
+>         const w = {};
+>         keys.forEach((x) => (w[x] = s[x] * (0.8 + 0.4 * rnd())));
+>         const sc = l
+>           .map((u) => {
+>             let a = 0,
+>               b = 0;
+>             keys.forEach((x) => {
+>               (a += w[x] * u[x]), (b += w[x]);
+>             });
+>             return [a / b, u];
+>           })
+>           .sort((x, y) => y[0] - x[0]);
+>         for (let j = 0; j < k; j++) cnt.set(sc[j][1], (cnt.get(sc[j][1]) || 0) + 1);
+>       }
+>       l.forEach((u) => (u.rob = Math.round((100 * (cnt.get(u) || 0)) / N)));
+>     })();
+2854c2878
+<         .map((e) => ({
+---
+>         .map((e, ix) => ({
+2857c2881
+<           sub: `mass ${O(e.mass)} · premium ${O(e.premium)} · growth ${O(e.growth)} · gap ${O(e.supply)}`,
+---
+>           sub: `${ix < 20 ? (e.rob >= 90 ? "Robust " : e.rob >= 50 ? "Fairly robust " : "Sensitive ") + e.rob + "% · " : ""}mass ${O(e.mass)} · premium ${O(e.premium)} · growth ${O(e.growth)} · gap ${O(e.supply)}`,
+2869c2893,2895
+<     (n += "<h2>Ranked</h2>" + o.html + "</div>"),
+---
+>     (n +=
+>       '<div class="note"><b>Robustness</b> ' + q("scenario") + ": each of the top 20 shows how often it stays in the top 10 when every weight moves at random by up to 20% (300 draws). Robust is 90% or more; sensitive is under 50%.</div>" +
+>       "<h2>Ranked</h2>" + o.html + "</div>"),
+3042a3069,3079
+>     const r = __ntInner();
+>     try {
+>       window.dispatchEvent(
+>         new CustomEvent("terrain:render", {
+>           detail: { level: pe.level, state: pe.state, district: pe.district, micro: pe.micro, pin: pe.pin },
+>         }),
+>       );
+>     } catch (e) {}
+>     return r;
+>   }
+>   function __ntInner() {
+3533,3534c3570,3574
+<     window.__TERRAIN_DEV &&
+<       (window.TERRAIN = {
+---
+>     (window.TERRAIN = {
+>         get map() {
+>           return Se;
+>         },
+>         showPane: ot,
+4002a4043
+>         showPane: ot,
