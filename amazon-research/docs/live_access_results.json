@@ -1,0 +1,43 @@
+{
+  "date": "2026-11-07",
+  "marketplace": "amazon.in",
+  "direct_http_probe": {
+    "status": 503,
+    "product_rows": 0,
+    "note": "Single urllib HTTPS search probe; the server returned an Amazon error page."
+  },
+  "camoufox_runs": [
+    {
+      "engine": "camoufox",
+      "started_at": "2026-11-07T14:21:45+00:00",
+      "finished_at": "2026-11-07T14:21:52+00:00",
+      "status": "browser_error",
+      "source_url": "https://www.amazon.in/s?k=ceiling+fan&page=1",
+      "http_status": null,
+      "outcome": "browser_error",
+      "parsed_rows": 0,
+      "new_rows": 0
+    },
+    {
+      "engine": "camoufox",
+      "started_at": "2026-11-07T14:22:46+00:00",
+      "finished_at": "2026-11-07T14:22:53+00:00",
+      "status": "service_unavailable",
+      "source_url": "https://www.amazon.in/s?k=ceiling+fan&page=1",
+      "http_status": 503,
+      "outcome": "service_unavailable",
+      "parsed_rows": 0,
+      "new_rows": 0
+    }
+  ],
+  "certificate_note": "The first Camoufox attempt failed certificate trust. Importing the workspace pre-existing trusted CA into the isolated test Firefox profile resolved TLS validation. The subsequent live page request returned HTTP 503. TLS verification was not disabled. No profile, cookie or certificate is included in this deliverable.",
+  "live_product_rows": 0,
+  "live_review_rows": 0,
+  "cloud_browser": {
+    "browser": "available remote Chrome",
+    "page_title": "500 - Amazon.in",
+    "message": "We are sorry for the inconvenience. We do not support your session or client. Please try again with a different, up-to-date browser or the Amazon Shopping mobile app.",
+    "product_rows": 0,
+    "review_rows": 0
+  }
+}

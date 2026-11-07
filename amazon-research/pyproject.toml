@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "amazon-personal-research"
+version = "0.1.0"
+description = "Amazon.in page collection, explicit access diagnostics, and review comparison for personal research"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["beautifulsoup4>=4.12,<5", "httpx>=0.27,<1", "vaderSentiment==3.3.2", "langdetect==1.0.9", "tzdata>=2024.1; sys_platform == 'win32'"]
+
+[project.optional-dependencies]
+browser = ["playwright>=1.49,<2"]
+camoufox = ["camoufox>=0.4,<0.5"]
+dev = ["pytest>=8,<10"]
+
+[project.scripts]
+amazon-research = "amazon_research.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["amazon_research*"]
+
+[tool.setuptools.package-data]
+amazon_research = ["schema.sql"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

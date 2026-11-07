@@ -1,0 +1,8 @@
+{
+  "manifest_version": 3,
+  "name": "Personal Amazon Research Capture",
+  "version": "0.2.0",
+  "description": "Export the product facts, product cards or review cards on the Amazon.in page you are viewing. No background collection.",
+  "permissions": ["activeTab", "scripting"],
+  "action": {"default_title": "Capture this Amazon.in page", "default_popup": "popup.html"}
+}
