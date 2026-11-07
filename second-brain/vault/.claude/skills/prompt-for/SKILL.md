@@ -1,6 +1,6 @@
 ---
 name: prompt-for
-description: Writes copy-ready prompts for other AI tools (deep-research engines, agent platforms, custom assistants, slide generators) with __OWNER__'s constraints, the mandates and the exact return format built in. Use when __OWNER__ says write a prompt for, brief the research tool, prompt the agent or convert my holdings to text.
+description: Writes copy-ready prompts for other AI tools (research engines, agents, custom assistants, slide generators) with the mandates and exact return format built in. Use when __OWNER__ says write a prompt for, brief the research tool, prompt the agent or convert my holdings to text.
 model: __MID_MODEL__
 effort: medium
 argument-hint: <target tool> <task> [holdings, data or files]
@@ -10,6 +10,7 @@ One copy-ready prompt for another tool that carries __OWNER__'s standards, the m
 
 ## Read first
 - The latest files the prompt draws on: holdings export, thesis notes, deck or data (M6); say which versions.
+- `.claude/rules/invest.md` for any equity prompt: the prompt is chat output, and path-scoped rules load only when a file in `04-Invest/` is touched.
 - __OS_DIR__/templates.md: T11 (fresh-capital research brief) as the structure for equity research prompts; T10 (investment committee rules) for the policy, framework, self-audit and ACTION CARD the prompt must require.
 - __OS_DIR__/output-standards.md: Equity research standard; Anti-hallucination; Formatting bans; Deck rules when the target is a slide tool.
 - __OS_DIR__/active-areas.md: the area the prompt serves (good output, rejected), including failures of earlier tool runs the prompt must pre-empt.
@@ -22,7 +23,7 @@ One copy-ready prompt for another tool that carries __OWNER__'s standards, the m
 4. Paste the mandate block below, word for word, into every equity prompt ahead of the task.
 5. Holdings or data: convert to plain-text tables when asked, one row per holding with the columns the analysis needs; a missing field is marked missing, never filled.
 6. Specify the return format exactly: section order, table columns, an F, S, I or ND grade on every decision-driving claim, dated sources with links, no em dashes, and a closing list of what the tool could not verify.
-7. Slide tools: carry the deck rules that matter: a final deck with no version language; conclusion titles that read as one storyline; less text, more visual, no excess whitespace; no extreme or absolute words; sources in subscript; no abbreviations; the given template as the authority; no firm branding on independent decks.
+7. Slide tools: carry the deck rules that matter: a final deck with no version language; conclusion titles that read as one storyline; less text, more visual, no excess whitespace; no extreme or absolute words; sources in subscript; no abbreviations; the template __OWNER__ names as the authority, its own slides and elements used as they are with content customised, never a default template system; no firm branding on independent decks.
 8. A framework or prompt __OWNER__ brings from elsewhere is tested before it is reused: say whether it holds up and what to drop.
 9. Every prompt, equity or not, carries the block's anti-fabrication line.
 
@@ -34,6 +35,7 @@ Never fabricate a number, source, quote or case. Where data is missing, write "I
 
 ## Rules enforced here
 - Every equity prompt carries the block's first line (M2) word for word; no prompt asks a tool for a sell-type verdict, an exit plan, stop levels or tax-loss moves, whatever the request says.
+- The guard's M2 check can flag that first line because it names the barred moves; it is the mandate, not a suggestion, so say so and keep it word for word, never softened or dropped to clear the flag.
 - Every prompt carries the block's second line (M5) and asks for dated, checkable sources.
 - __OWNER__'s request is quoted verbatim, never paraphrased away; the T10 policy is quoted, never re-derived.
 - Client names, client data and engagement material never enter a prompt for an outside tool; anonymise or code-name them as output-standards.md requires.
@@ -47,5 +49,5 @@ Never fabricate a number, source, quote or case. Where data is missing, write "I
 
 ## Output
 - In chat: the prompt in one copy-ready block, then one line naming what to attach alongside it.
-- A prompt worth reusing saved to `08-Library/Prompts/<Tool> <purpose>.md` when __OWNER__ asks.
-- M1 no em dashes in the prompt or in the format it demands. M2 the mandate block in every equity prompt, word for word. M5 the anti-fabrication line in every prompt. M6 built from the latest holdings and files, and name them.
+- A prompt worth reusing saved to `08-Library/Prompts/<Tool> <purpose>.md` when __OWNER__ asks; if the guard refuses an equity prompt there over the mandate line, say so rather than altering the line.
+- M1 no em dashes in the prompt or in the format it demands. M2 the mandate block in every equity prompt, word for word. M3 a slide-tool prompt demands a final deck with no version language. M5 the anti-fabrication line in every prompt. M6 built from the latest holdings and files, and name them.
