@@ -65,6 +65,8 @@ Options: `--name NAME`, `--os-dir DIR`, `--top-model fable`, `--critic-model opu
 | M5 Never fabricate a number, source or quote | manual, critic gates, every skill's output step |
 | M6 Read the latest file version and the project rules before any build | prompt preflight injected on build requests; work rule; build skills |
 
+Prove every mandate end to end from the vault folder with `python3 .claude/hooks/guard.py selftest`: it fires each hook the way Claude Code does, with synthetic text, prints PASS or FAIL per mandate and never prints the private lists. /onboard runs it.
+
 Switch the guard off temporarily with `touch .claude/guard/OFF` (delete the file to switch back on).
 
 ## Model routing

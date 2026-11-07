@@ -8,6 +8,7 @@ Modes (first argument):
   prompt   UserPromptSubmit: inject the build preflight (M6), mandate reminders and the FORGE trigger
   lint     CLI: python3 guard.py lint FILE...   (same checks as post, prints a report, exit 1 on violations)
   extract  CLI: python3 guard.py extract VAULT  (rebuild kill-list.txt and fact-base-numbers.txt from the OS files)
+  selftest CLI: python3 guard.py selftest      (fire every hook as Claude Code would; PASS or FAIL per mandate)
 
 Mandates (see CLAUDE.md): M1 no em dashes; M2 equity verdicts BUY / ACCUMULATE / HOLD / WATCH / AVOID only,
 no sell, trim, exit, reduce, stop-loss or tax-loss suggestions; M3 client decks are final decks, no
@@ -578,8 +579,27 @@ def start_marker(root, payload):
     return os.path.join(root, GUARD_DIR, ".bash-start-%s" % key)
 
 
+def sweep_markers(root, max_age=3600.0):
+    """A failed or interrupted command never reaches PostToolUse, so its start marker is left behind."""
+    gdir = os.path.join(root, GUARD_DIR)
+    try:
+        names = os.listdir(gdir)
+    except OSError:
+        return
+    now = time.time()
+    for n in names:
+        if n.startswith(".bash-start-"):
+            p = os.path.join(gdir, n)
+            try:
+                if now - os.path.getmtime(p) > max_age:
+                    os.remove(p)
+            except OSError:
+                pass
+
+
 def mode_prebash(payload, root, cfg):
     """PreToolUse on Bash: remember when the command started, so post only lints files it wrote."""
+    sweep_markers(root)
     try:
         os.makedirs(os.path.join(root, GUARD_DIR), exist_ok=True)
         with open(start_marker(root, payload), "w", encoding="utf-8") as fh:
@@ -840,6 +860,146 @@ def mode_extract(vault, os_name="00-Operating-System", force=False):
 
 
 # ---------------------------------------------------------------- main
+# ---------------------------------------------------------------- selftest (/onboard)
+HOOK_EVENTS = ("SessionStart", "UserPromptSubmit", "PreToolUse", "PostToolUse", "Stop")
+
+
+def run_hook(mode, payload, root):
+    import subprocess
+    env = dict(os.environ, CLAUDE_PROJECT_DIR=root)
+    env.pop("SB_GUARD_OFF", None)
+    r = subprocess.run([sys.executable, os.path.abspath(__file__), mode], input=json.dumps(payload),
+                       capture_output=True, text=True, cwd=root, env=env, timeout=60)
+    return r.returncode, r.stdout + r.stderr
+
+
+def run_lint(paths, root, extra=()):
+    import subprocess
+    env = dict(os.environ, CLAUDE_PROJECT_DIR=root)
+    r = subprocess.run([sys.executable, os.path.abspath(__file__), "lint"] + list(paths) + list(extra),
+                       capture_output=True, text=True, cwd=root, env=env, timeout=60)
+    return r.returncode, r.stdout
+
+
+def tiny_pptx(path, body):
+    ns_p = "http://schemas.openxmlformats.org/presentationml/2006/main"
+    ns_a = "http://schemas.openxmlformats.org/drawingml/2006/main"
+    with zipfile.ZipFile(path, "w") as z:
+        z.writestr("[Content_Types].xml", "<Types/>")
+        z.writestr("ppt/slides/slide1.xml",
+                   '<p:sld xmlns:p="%s" xmlns:a="%s"><p:cSld><p:spTree><p:sp><p:txBody><a:p><a:r><a:t>%s</a:t>'
+                   '</a:r></a:p></p:txBody></p:sp></p:spTree></p:cSld></p:sld>' % (ns_p, ns_a, html.escape(body)))
+
+
+def mode_selftest(root):
+    """Prove each mandate end to end with synthetic text. Prints no private list contents."""
+    import shutil
+    import tempfile
+    rows = []
+
+    def row(check, ok, evidence):
+        rows.append((check, "PASS" if ok else ("SKIP" if ok is None else "FAIL"), evidence))
+
+    # Wiring: every event registered and pointing at a script that exists.
+    try:
+        with open(os.path.join(root, ".claude", "settings.json"), encoding="utf-8") as fh:
+            hooks = json.load(fh).get("hooks") or {}
+        missing = [e for e in HOOK_EVENTS if not hooks.get(e)]
+        bad = []
+        for e in HOOK_EVENTS:
+            for grp in hooks.get(e) or []:
+                for h in grp.get("hooks") or []:
+                    m = re.search(r"\.claude/hooks/([\w.]+)", h.get("command", ""))
+                    if not m or not os.path.isfile(os.path.join(root, ".claude", "hooks", m.group(1))):
+                        bad.append(e)
+        row("Hook wiring", not missing and not bad,
+            "all five events registered" if not (missing or bad) else "missing %s; broken %s" % (missing, bad))
+    except Exception as exc:  # noqa: BLE001
+        row("Hook wiring", False, "settings.json unreadable: %s" % exc)
+    off = os.environ.get("SB_GUARD_OFF") == "1" or os.path.exists(os.path.join(root, GUARD_DIR, "OFF"))
+    row("Guard switched on", not off, "OFF switch present; hooks pass everything" if off else "no OFF switch")
+
+    note = os.path.join(root, "01-Inbox", "guard-selftest.md")
+
+    def pre(text, path=note):
+        return run_hook("pre", {"tool_name": "Write", "tool_input": {"file_path": path, "content": text},
+                                "cwd": root, "hook_event_name": "PreToolUse"}, root)
+
+    code, _ = pre("alpha " + EM_DASH + " beta\n")
+    row("M1 write blocked (PreToolUse)", code == 2, "exit %d, expected 2" % code)
+    _, out = run_hook("stop", {"last_assistant_message": "alpha " + EM_DASH + " beta", "stop_hook_active": False,
+                               "cwd": root}, root)
+    row("M1 chat answer sent back (Stop)", '"block"' in out, "rewrite requested" if '"block"' in out else "no block")
+
+    code, _ = pre("Verdict: SELL\n")
+    row("M2 sell verdict blocked", code == 2, "exit %d, expected 2" % code)
+    code, _ = pre("Action card: trim the position after results.\n")
+    row("M2 trim suggestion blocked", code == 2, "exit %d, expected 2" % code)
+    code, _ = pre("Verdict: ACCUMULATE\nPause trigger: two quarters of margin decline.\n")
+    row("M2 allowed verdict passes", code == 0, "exit %d, expected 0" % code)
+    code, _ = pre("Verdict: HOLD. Never suggest selling or a stop-loss.\n")
+    row("M2 mandate wording passes", code == 0, "exit %d, expected 0" % code)
+
+    tmp = tempfile.mkdtemp(prefix="guard-selftest-")
+    try:
+        deck = os.path.join(tmp, "selftest.pptx")
+        tiny_pptx(deck, "What changed since v2: margins moved")
+        code, out = run_lint([deck], root)
+        row("M3 version language in a deck blocked", code == 1 and "M3" in out, "exit %d, M3 %s" % (
+            code, "flagged" if "M3" in out else "not flagged"))
+        clean = os.path.join(tmp, "clean.pptx")
+        tiny_pptx(clean, "Margins recover once freight normalises")
+        code, out = run_lint([clean], root)
+        row("M3 final deck passes", "BLOCK" not in out, "no blocking issue" if "BLOCK" not in out else "blocked")
+
+        vals, _pairs = load_fact_numbers(root)
+        cv = os.path.join(tmp, "selftest-resume.md")
+        if vals:
+            probe = 987654.321
+            while probe in vals:
+                probe += 1
+            with open(cv, "w", encoding="utf-8") as fh:
+                fh.write("Grew revenue by %s Cr in one year\n" % probe)
+            code, out = run_lint([cv], root, ["--resume"])
+            row("M4 number outside fact base blocked", code == 1 and "M4" in out, "exit %d" % code)
+        else:
+            row("M4 number outside fact base blocked", None, "fact-base-numbers.txt empty; run guard.py extract")
+        kl = load_kill_list(root)
+        if kl:
+            with open(cv, "w", encoding="utf-8") as fh:
+                fh.write("Led the work: %s\n" % " ".join(kl[0]))
+            code, out = run_lint([cv], root, ["--resume"])
+            row("M4 kill-list claim blocked", code == 1 and "kill-list" in out,
+                "exit %d (test claim built from list entry 1; contents not shown)" % code)
+        else:
+            row("M4 kill-list claim blocked", None, "kill-list.txt empty; run guard.py extract")
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+    _, out = run_hook("prompt", {"prompt": "update slide 4 of the deck", "cwd": root}, root)
+    row("M6 build preflight injected", "Build preflight" in out, "injected" if "Build preflight" in out else "missing")
+    _, out = run_hook("prompt", {"prompt": "FORGE: draft the note", "cwd": root}, root)
+    row("FORGE trigger injected", "FORGE trigger" in out, "injected" if "FORGE trigger" in out else "missing")
+
+    import subprocess
+    r = subprocess.run([sys.executable, os.path.join(root, ".claude", "hooks", "session_context.py")],
+                       capture_output=True, text=True, cwd=root, env=dict(os.environ, CLAUDE_PROJECT_DIR=root),
+                       input="{}", timeout=60)
+    n = len(r.stdout)
+    row("Session digest (SessionStart)", r.returncode == 0 and 0 < n <= 10000, "%d characters, cap 10,000" % n)
+
+    stale = [x for x in os.listdir(os.path.join(root, GUARD_DIR)) if x.startswith(".bash-start-")] \
+        if os.path.isdir(os.path.join(root, GUARD_DIR)) else []
+    row("Leftover command markers", True, "%d (cleared automatically after an hour)" % len(stale))
+
+    width = max(len(r[0]) for r in rows)
+    for check, status, ev in rows:
+        print("%-*s  %-4s  %s" % (width, check, status, ev))
+    failed = sum(1 for r in rows if r[1] == "FAIL")
+    print("\n%d checks, %d failed" % (len(rows), failed))
+    return 1 if failed else 0
+
+
 def main(argv):
     mode = argv[1] if len(argv) > 1 else ""
     if mode == "extract":
@@ -848,6 +1008,8 @@ def main(argv):
         for line in mode_extract(vault, os_name, force="--force" in argv):
             print(line)
         return 0
+    if mode == "selftest":
+        return mode_selftest(project_dir())
     if mode == "lint":
         root = project_dir()
         cfg = load_config(root)

@@ -449,6 +449,37 @@ class GuardTests(unittest.TestCase):
                            env=dict(os.environ, CLAUDE_PROJECT_DIR=self.root))
         self.assertEqual(p.returncode, 0)
 
+    def test_stale_markers_swept(self):
+        gdir = os.path.join(self.root, ".claude", "guard")
+        stale = os.path.join(gdir, ".bash-start-stale")
+        with open(stale, "w") as fh:
+            fh.write("1")
+        old = time.time() - 7200
+        os.utime(stale, (old, old))
+        self.run_hook("prebash", {"tool_name": "Bash", "tool_use_id": "sweep1", "cwd": self.root,
+                                  "tool_input": {"command": "true"}})
+        self.assertFalse(os.path.exists(stale))
+        self.assertTrue(os.path.exists(os.path.join(gdir, ".bash-start-sweep1")))
+        os.remove(os.path.join(gdir, ".bash-start-sweep1"))
+
+    def test_selftest_passes_on_installed_layout(self):
+        vault = tempfile.mkdtemp(prefix="sb selftest ")
+        try:
+            shutil.copytree(os.path.join(self.root, "00-Operating-System"), os.path.join(vault, "00-Operating-System"))
+            shutil.copytree(os.path.join(self.root, ".claude", "guard"), os.path.join(vault, ".claude", "guard"))
+            shutil.copytree(HOOKS, os.path.join(vault, ".claude", "hooks"))
+            shutil.copy(os.path.join(HOOKS, "..", "settings.json"), os.path.join(vault, ".claude", "settings.json"))
+            p = subprocess.run([sys.executable, os.path.join(vault, ".claude", "hooks", "guard.py"), "selftest"],
+                               capture_output=True, text=True, cwd=vault,
+                               env=dict(os.environ, CLAUDE_PROJECT_DIR=vault))
+            self.assertEqual(p.returncode, 0, p.stdout + p.stderr)
+            self.assertIn("0 failed", p.stdout)
+            self.assertNotIn("SKIP", p.stdout)
+            self.assertNotIn("Golden Spoon", p.stdout)  # private list contents never printed
+            self.assertFalse(os.path.exists(os.path.join(vault, "01-Inbox", "guard-selftest.md")))
+        finally:
+            shutil.rmtree(vault, ignore_errors=True)
+
     def test_generated_kit_text_has_no_em_dash(self):
         kit = os.path.join(HERE, "..")
         offenders = []
