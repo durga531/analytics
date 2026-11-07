@@ -11,8 +11,9 @@ for (const f of fc.features) {
   const p = f.properties || {}; const id = String(p.objectid ?? p.OBJECTID ?? p.id ?? f.id);
   // largest polygon centroid, so island chains and exclaves do not pull the point into the sea
   let geom = f.geometry; let best = geom;
-  if (geom.type === 'MultiPolygon') { let a = -1; for (const poly of geom.coordinates) { const g = { type: 'Polygon', coordinates: poly }; const ar = d3.geoArea(g); if (ar > a) { a = ar; best = g; } } }
+  if (geom.type === 'MultiPolygon') { let a = -1; for (const poly of geom.coordinates) { const g = { type: "Polygon", coordinates: poly }; let ar = d3.geoArea(g); if (ar > 2 * Math.PI) ar = 4 * Math.PI - ar; if (ar > a) { a = ar; best = g; } } }
   let c = d3.geoCentroid(best);
+  if (d3.geoArea(best) > 2 * Math.PI) { best = { type: "Polygon", coordinates: best.coordinates.map((r) => r.slice().reverse()) }; c = d3.geoCentroid(best); }
   if (!d3.geoContains(best, c)) { const b = d3.geoBounds(best); c = [(b[0][0] + b[1][0]) / 2, (b[0][1] + b[1][1]) / 2]; }
   out[id] = [Math.round(c[0] * 1e4) / 1e4, Math.round(c[1] * 1e4) / 1e4];
 }
