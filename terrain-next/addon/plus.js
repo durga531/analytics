@@ -4,6 +4,8 @@
    2. Today: daily temperature and rain for all 780 districts, rule-based alerts and a playbook of what to do.
    3. Zoom and touch: suggestions to drill in or out as you zoom, a one-time gesture hint on touch screens,
       keyboard focus on the map, bigger zoom buttons for fingers.
+   4. Pulse: what India watches and says about brands in three categories (YouTube, national), with a map of
+      where each category's demand sits (district data already in TERRAIN).
    Talks to the app only through window.TERRAIN and the "terrain:render" event. */
 (function () {
   "use strict";
@@ -47,7 +49,14 @@
   };
   const NONE = "#f1ede6";
 
-  const NX = { mode: null, meta: null, dclass: null, gaps: null, weather: null, wmetric: "alerts", pinState: null, pinClass: {}, sel: null, chipKey: null };
+  const VOICE = { c: "Consumer", t: "Trade", i: "Investor", a: "Ad reaction" };
+  const PRAMP = ["#efedf5", "#dadaeb", "#bcbddc", "#9e9ac8", "#756bb1", "#54278f"];
+  const PCAT = {
+    "Paints": { m: [["bld", "New building"], ["aff", "Upper-wealth homes"]], why: "Paint demand follows new building and repainting by wealthier homes." },
+    "Two-wheelers": { m: [["v2w", "Registrations"], ["ev", "Electric share"]], why: "Registrations show where two-wheelers sell; electric share shows where Ather and the EV ranges compete." },
+    "Quick commerce": { m: [["qc", "Dark stores"], ["unserved", "No dark store yet"]], why: "Dark stores show where quick commerce already delivers; upper-wealth homes in districts without one show where it could go next." },
+  };
+  const NX = { mode: null, pulse: null, pctx: null, pcat: "Two-wheelers", pmetric: {}, popen: null, meta: null, dclass: null, gaps: null, weather: null, wmetric: "alerts", pinState: null, pinClass: {}, sel: null, chipKey: null };
 
   function ready(fn) {
     const t0 = Date.now();
@@ -72,6 +81,8 @@
     const btnToday = mk("nxToday", "#4f8fd6", "Today", "Today: temperature and rain for every district, alerts and what to do");
     const btnClass = mk("nxClass", CLASS.A.color, "Classes", "Store classes: every PIN graded A to D for organised retail, with gaps highlighted");
     right.insertBefore(btnClass, btnToday);
+    const btnPulse = mk("nxPulse", "#756bb1", "Pulse", "Brand Pulse: what India watches and says about brands in paints, two-wheelers and quick commerce, and where each category's demand sits");
+    right.insertBefore(btnPulse, btnToday.nextSibling);
     const centre = $("#centre");
     const drawer = document.createElement("aside");
     drawer.id = "nxDrawer"; drawer.className = "nxD hidden"; drawer.setAttribute("role", "dialog"); drawer.setAttribute("aria-modal", "false");
@@ -100,6 +111,7 @@
       NX.mode = NX.mode === m ? null : m;
       btnClass.setAttribute("aria-pressed", String(NX.mode === "class"));
       btnToday.setAttribute("aria-pressed", String(NX.mode === "today"));
+      btnPulse.setAttribute("aria-pressed", String(NX.mode === "pulse"));
       document.body.classList.toggle("nx-on", !!NX.mode);
       const home = $("#home"); if (NX.mode && home) home.classList.add("hidden");
       tip.classList.add("hidden");
@@ -107,7 +119,7 @@
       drawer.classList.remove("hidden");
       drawer.innerHTML = `<div class="nxHead"><div class="nxKick">Loading</div><h2>One moment</h2><button class="nxX" aria-label="Close">×</button></div>`;
       wireClose();
-      (NX.mode === "class" ? loadClass() : loadToday()).then(refresh).catch((e) => {
+      (NX.mode === "class" ? loadClass() : NX.mode === "pulse" ? loadPulse() : loadToday()).then(refresh).catch((e) => {
         drawer.innerHTML = `<div class="nxHead"><div class="nxKick">Could not load</div><h2>This view needs data that did not arrive.</h2><button class="nxX" aria-label="Close">×</button></div><div class="nxBody"><p>${esc(e.message)}</p><div class="nxActions"><button class="primary" id="nxRetry">Retry</button></div></div>`;
         wireClose(); const r = $("#nxRetry"); if (r) r.onclick = () => { const m2 = NX.mode; NX.mode = null; Object.keys(cache).forEach((k) => delete cache[k]); setMode(m2); };
       });
@@ -119,17 +131,20 @@
     }
     btnClass.onclick = () => setMode("class");
     btnToday.onclick = () => setMode("today");
+    btnPulse.onclick = () => setMode("pulse");
     document.addEventListener("keydown", (e) => { if (e.key === "Escape" && NX.mode && !e.defaultPrevented) setMode(NX.mode); });
     window.addEventListener("terrain:render", () => { if (NX.mode) refresh(); });
 
     const loadClass = () => Promise.all([getJSON("data/next/class_meta.json"), getJSON("data/next/district_class.json"), getJSON("data/next/class_gaps.json")]).then(([m, d, g]) => { NX.meta = m; NX.dclass = d; NX.gaps = g; });
     const loadToday = () => getJSON("data/next/today/weather.json").then((w) => { NX.weather = w; });
+    const loadPulse = () => Promise.all([getJSON("data/next/pulse/brand_pulse.json"), getJSON("data/next/pulse/context.json"), getJSON("data/next/today/district_meta.json")]).then(([p, c, m]) => { NX.pulse = p; NX.pctx = c; NX.dmeta = NX.dmeta || m; });
     const S = () => T.S || {};
     const districtName = (id) => { const f = map.querySourceFeatures("districts", { filter: ["==", ["get", "objectid"], Number(id)] })[0]; return f ? f.properties.district : null; };
 
     function refresh() {
       if (NX.mode === "class") return renderClass();
       if (NX.mode === "today") return renderToday();
+      if (NX.mode === "pulse") return renderPulse();
     }
 
     // ---------------- store classes
@@ -208,6 +223,7 @@
           <div class="nxActions">${rows.length ? `<button class="primary" id="nxCsv">Download ${rows.length === 1 ? "this gap" : "all " + fmt(rows.length) + " gaps"} (CSV)</button>` : ""}${sc.kind !== "india" ? `<button id="nxIndia">Back to India</button>` : ""}</div>
           ${sc.kind === "india" ? `<p class="nxNote">Click a district on the map, or a row above, to see its PINs graded A to D. Gap PINs carry a teal outline.</p>` : ""}
           <h3>How to read this</h3>
+          <div class="nxBound"><p><b>Can say:</b> which PINs look like places that already have organised stores, tested on states the model never saw.</p><p><b>Cannot say:</b> sales potential or whether a store would be profitable. The model learns where stores are today, not where they succeed, and it has not yet been tested on stores that opened later.</p></div>
           <p class="nxNote">${esc(m.method)} The target is "${esc(m.target)}". A gap means no organised store within 3 km, measured from where people live. Stores are counted from the listed universe only, and some stores are placed at PIN or city centres, so check a gap on the ground before acting; dense metro PINs need the most care.</p>
         </div>`;
       wireClose();
@@ -325,6 +341,112 @@
         <p class="nxNote">${flags.length ? "Signals: " + esc(flags.join(", ")) + "." : "No alert signals."} Last 7 days: ${fmt(d.pr7_past)} mm of rain; next 7 days: ${fmt(d.pr7_next)} mm${d.pr7_norm != null ? " against a normal of about " + fmt(d.pr7_norm) + " mm" : ""}.${M.hh ? " " + size(M.hh) + " households." : ""}</p>`;
     }
     getJSON("data/next/today/district_meta.json").then((m) => (NX.dmeta = m)).catch(() => {});
+    // ---------------- Pulse: national brand attention and voice, local category demand
+    const ctxIx = (k) => NX.pctx.fields.findIndex((f) => f[0] === k);
+    function ctxVal(id, k) {
+      const r = NX.pctx.d[id]; if (!r) return null;
+      if (k === "unserved") { const q = r[ctxIx("qc")]; return q ? 0 : r[ctxIx("aff")]; }
+      return r[ctxIx(k)];
+    }
+    function ctxLabel(k) { return k === "unserved" ? "Upper-wealth households in districts with no dark store" : NX.pctx.fields[ctxIx(k)][1]; }
+    function ctxFmt(k, v) {
+      if (v == null) return "n/a";
+      const u = k === "unserved" ? "count" : NX.pctx.fields[ctxIx(k)][2];
+      return u === "count" ? size(v) : u === "share" ? (Math.abs(v) < 0.1 ? fmt(100 * v, 1) + "%" : pct(v)) : u === "months" ? fmt(v) + " months" : fmt(v, v < 10 ? 1 : 0);
+    }
+    const sortedCache = {};
+    function ctxSorted(k) { return (sortedCache[k] = sortedCache[k] || Object.keys(NX.pctx.d).map((id) => ctxVal(id, k)).filter((v) => v != null && v > 0).sort((a, b) => a - b)); }
+    function ctxRank(k, v) { const a = ctxSorted(k); if (v == null || v <= 0 || !a.length) return null; let lo = 0; while (lo < a.length && a[lo] <= v) lo++; return Math.max(1, Math.round(100 * (1 - lo / a.length)) || 1); }
+    function ctxBreaks(k) { const a = ctxSorted(k), q = (p) => a[Math.min(a.length - 1, Math.floor(p * a.length))]; return [q(0.2), q(0.4), q(0.6), q(0.8), q(0.95)]; }
+    function renderPulse() {
+      const P = NX.pulse, cats = Object.keys(P.categories);
+      if (!P.categories[NX.pcat]) NX.pcat = cats[0];
+      const C = P.categories[NX.pcat], cfg = PCAT[NX.pcat] || { m: [] };
+      const mk2 = NX.pmetric[NX.pcat] || (cfg.m[0] && cfg.m[0][0]);
+      // map
+      if (mk2) {
+        const br = ctxBreaks(mk2), expr = ["match", ["get", "objectid"]];
+        Object.keys(NX.pctx.d).forEach((id) => { const v = ctxVal(id, mk2); expr.push(Number(id), v == null || v <= 0 ? NONE : pick(v, br, PRAMP)); });
+        expr.push(NONE);
+        map.setPaintProperty("nx-d-fill", "fill-color", expr);
+        vis(["nx-p-fill", "nx-p-line", "nx-p-gap", "nx-p-sel"], false); vis(["nx-d-fill", "nx-d-line"], true);
+        legend.classList.remove("hidden");
+        legend.innerHTML = `<div class="t">${esc(ctxLabel(mk2))}</div><div class="ramp">${PRAMP.map((c) => `<span style="background:${c}"></span>`).join("")}</div><div class="ticks"><span>${ctxFmt(mk2, br[0])}</span><span>${ctxFmt(mk2, br[2])}</span><span>${ctxFmt(mk2, br[4])}+</span></div><div class="row"><span class="sw" style="background:${NONE};border:1px solid #ddd"></span>${mk2 === "unserved" ? "Has a dark store, or no data" : mk2 === "qc" ? "No dark store" : "No data"}</div>`;
+      }
+      // brand rows
+      const B = C.brands, names = Object.keys(B).sort((a, b) => (B[b].earned_share || 0) - (B[a].earned_share || 0));
+      const maxS = Math.max(...names.map((n) => B[n].earned_share || 0), 0.01);
+      const voiceCell = (b) => {
+        const c = b.consumer;
+        if (c.net == null) return `<span class="pv mut" title="${c.n} consumer ${c.n === 1 ? "comment" : "comments"} in the labelled sample; ${NX.pulse.method.min_read} or more are needed to read a tone">Too few to read</span>`;
+        const n = Math.round(100 * c.net), cls = n > 10 ? "pos" : n < -10 ? "neg" : "mid";
+        return `<span class="pv ${cls}" title="Of ${c.n} consumer comments: ${c.pos} positive, ${c.neg} negative, ${c.n - c.pos - c.neg} neutral or questions">${n > 0 ? "+" : ""}${n} <span class="mut">net · ${c.n} read</span></span>`;
+      };
+      const rows = names.map((n) => {
+        const b = B[n], open = NX.popen === n;
+        const worry = b.worry || (b.consumer.neg_themes[0] && b.consumer.n >= 4 && b.consumer.neg_themes[0][0] !== "brand and other" ? b.consumer.neg_themes[0][0] : "");
+        return `<li class="pRow${open ? " open" : ""}" data-b="${esc(n)}" tabindex="0" role="button" aria-expanded="${open}">
+          <div class="pTop"><span class="pN">${esc(n)}</span>${voiceCell(b)}</div>
+          <div class="pBar" title="${pct(b.earned_share)} of independent views in this category: ${size(b.earned_views)} views on ${b.videos} videos from channels other than the brand's own"><span style="width:${Math.max(2, 100 * (b.earned_share || 0) / maxS)}%"></span><em>${b.earned_share != null && b.earned_share < 0.01 ? "&lt;1%" : pct(b.earned_share)}</em></div>
+          ${worry ? `<div class="pW">Main worry: ${esc(worry)}</div>` : ""}
+          ${open ? brandDetail(n, b) : ""}</li>`;
+      }).join("");
+      // local context
+      const sel = S().district != null && NX.pctx.d[String(S().district)] ? String(S().district) : null;
+      const top = Object.keys(NX.pctx.d).map((id) => [id, ctxVal(id, mk2)]).filter((x) => x[1] > 0).sort((a, b) => b[1] - a[1]).slice(0, 6);
+      const M = NX.dmeta || {};
+      const local = sel ? localCard(sel, cfg) : `<p class="nxNote" style="margin-top:0">Click a district to see this category's numbers there.</p>`;
+      const fetched = new Date(P.fetched_utc).toLocaleDateString("en-IN", { day: "numeric", month: "short", timeZone: "Asia/Kolkata" });
+      drawer.innerHTML = `<div class="nxHead"><div class="nxKick">Pulse · YouTube, ${P.days} days to ${esc(fetched)}</div><h2>${esc(C.head || NX.pcat)}</h2><button class="nxX" aria-label="Close">×</button></div>
+        <div class="nxBody">
+          <div class="nxSeg" role="group" aria-label="Category">${cats.map((k) => `<button data-c="${esc(k)}" aria-pressed="${k === NX.pcat}">${esc(k)}</button>`).join("")}</div>
+          <p class="pRead">${esc(C.read)}</p>
+          <h3>Brands <span class="nxTag directional" title="National only. Samples are small and comment sections lean toward reviews and complaints: read the direction, not the decimal.">directional</span></h3>
+          <div class="pKey"><span>Share of independent views</span><span>Consumer tone</span></div>
+          <ul class="pList">${rows}</ul>
+          <p class="nxNote" style="margin-top:4px">Tap a brand for what people say, who is saying it and the source videos.</p>
+          <h3>Where this category's demand sits <span class="nxTag rule">TERRAIN data</span></h3>
+          <p class="nxNote" style="margin-top:0">${esc(cfg.why)}</p>
+          <div class="nxSeg" role="group" aria-label="Colour the map by">${cfg.m.map(([k, l]) => `<button data-m="${k}" aria-pressed="${k === mk2}">${esc(l)}</button>`).join("")}</div>
+          ${local}
+          <ol class="nxList">${top.map(([id, v], i) => `<li data-did="${id}" tabindex="0"><span class="r">${i + 1}</span><span class="m"><span class="t">${esc((M[id] && M[id].n) || districtName(id) || id)}</span> <span class="s">${esc((M[id] && M[id].s) || "")}</span></span><span class="v">${ctxFmt(mk2, v)}</span></li>`).join("")}</ol>
+          <div class="nxBound"><p><b>Can say:</b> which brands draw independent attention on YouTube this month, who is talking and what they praise or complain about, nationally.</p><p><b>Cannot say:</b> market share, sales, or how any district or state feels. YouTube comments carry no location, samples are small, and comment sections lean toward reviews and complaints.</p></div>
+          <p class="nxNote">${esc(P.source)} Comments were read in the original language (Hindi, Hinglish, Tamil, Telugu, Kannada, Malayalam, Bengali) and labelled by hand for who is speaking, tone and topic; quotes are English paraphrases. Views on a brand's own channel count as owned, everything else as independent. YouTube comments carry no location, so brand reads are national; the map is TERRAIN's district data. Labelled ${esc(P.labelled)}.</p>
+        </div>`;
+      wireClose();
+      drawer.querySelectorAll(".nxSeg button[data-c]").forEach((b) => (b.onclick = () => { NX.pcat = b.dataset.c; NX.popen = null; renderPulse(); }));
+      drawer.querySelectorAll(".nxSeg button[data-m]").forEach((b) => (b.onclick = () => { NX.pmetric[NX.pcat] = b.dataset.m; renderPulse(); }));
+      drawer.querySelectorAll(".pRow").forEach((li) => {
+        const go = (e) => { if (e.target.closest("a")) return; NX.popen = NX.popen === li.dataset.b ? null : li.dataset.b; renderPulse(); const el = drawer.querySelector(`.pRow[data-b="${CSS.escape(li.dataset.b)}"]`); if (el && el.scrollIntoView) el.scrollIntoView({ block: "nearest" }); };
+        li.onclick = go; li.onkeydown = (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); go(e); } };
+      });
+      drawer.querySelectorAll(".nxList li[data-did]").forEach((li) => { li.onclick = () => T.selectDistrict(li.dataset.did); li.onkeydown = (e) => { if (e.key === "Enter") T.selectDistrict(li.dataset.did); }; });
+    }
+    function brandDetail(n, b) {
+      const v = b.voice, tot = Object.values(v).reduce((a, x) => a + x, 0);
+      const VC = { consumers: "#756bb1", trade: "#e8892b", investors: "#4f8fd6", "ad and content reactions": "#9e9ac8" };
+      const mix = tot ? `<div class="pMix" title="Who is talking, among ${tot} relevant comments of ${b.labelled} read">${Object.keys(v).filter((k) => v[k]).map((k) => `<span style="flex:${v[k]};background:${VC[k]}" title="${esc(k)}: ${v[k]}"></span>`).join("")}</div><div class="pMixK">${Object.keys(v).filter((k) => v[k]).map((k) => `<span><i style="background:${VC[k]}"></i>${esc(k)} ${v[k]}</span>`).join("")}</div>` : `<p class="nxNote">None of the ${b.labelled} comments read were about the brand.</p>`;
+      const q = (b.quotes || []).map((x) => `<blockquote class="${x.s === "+" ? "pos" : x.s === "-" ? "neg" : ""}">“${esc(x.text)}”<cite>${esc(VOICE[x.voice] || "")} · <a href="https://www.youtube.com/watch?v=${encodeURIComponent(x.v)}" target="_blank" rel="noopener noreferrer">source video</a></cite></blockquote>`).join("");
+      const conc = b.top1_share != null && b.top1_share >= 0.5 ? ` One video is ${pct(b.top1_share)} of these.` : "";
+      const owned = b.owned_views ? `${size(b.owned_views)} views on its own channel; ` : "";
+      const topv = (b.top_earned || [])[0];
+      return `<div class="pDet">
+        <p>${esc(b.read)}</p>
+        ${q}
+        <div class="pSub">Who is talking</div>${mix}
+        <p class="nxNote">${owned}${size(b.earned_views)} independent views on ${b.videos} videos.${conc}${topv ? ` Most watched independent video: <a href="https://www.youtube.com/watch?v=${encodeURIComponent(topv.id)}" target="_blank" rel="noopener noreferrer">${esc(topv.title)}</a> (${esc(topv.channel)}, ${size(topv.views)} views).` : ""}</p>
+      </div>`;
+    }
+    function localCard(id, cfg) {
+      const M = (NX.dmeta || {})[id] || {};
+      const rowsFor = { "Paints": ["bld", "rera", "aff", "pmo"], "Two-wheelers": ["v2w", "v2wy", "ev", "hh"], "Quick commerce": ["qc", "qcp", "aff", "hh"] }[NX.pcat] || [];
+      const line = (k) => { const v = ctxVal(id, k), r = ["v2wy"].includes(k) ? null : ctxRank(k, v); return `<tr><td class="l">${esc(ctxLabel(k))}</td><td class="n">${ctxFmt(k, v)}${r ? `<span class="mut"> · top ${r}%</span>` : ""}</td></tr>`; };
+      let extra = "";
+      if (NX.pcat === "Paints" && NX.weather && NX.weather.districts[id] && NX.weather.districts[id].flags.includes("dry_window")) extra = `<p class="nxNote">Today: seven dry, mild days ahead here, a good window for exterior painting.</p>`;
+      if (NX.pcat === "Quick commerce" && !ctxVal(id, "qc") && ctxVal(id, "aff") > 0) extra = `<p class="nxNote">No dark store recorded here in March 2026, against ${size(ctxVal(id, "aff"))} upper-wealth households. Other explanations: the store list may be incomplete, or orders may be served from a store across the district line. Next check: the platforms' own delivery coverage for a few PIN codes here.</p>`;
+      return `<div class="pLocal"><div class="pSub">${esc(M.n || districtName(id) || "This district")}${M.s ? `, ${esc(M.s)}` : ""}</div><table class="pT">${rowsFor.map(line).join("")}</table>${extra}</div>`;
+    }
+
 
     // ---------------- hover and tap cards for add-on layers
     function place(e) {
@@ -341,6 +463,10 @@
         const d = NX.dclass[id]; const n = districtName(id) || "District";
         if (!d) return `<b>${esc(n)}</b>`;
         return `<b>${esc(n)}</b><div class="big">${size(d.uab_aff)}</div><span class="mut">upper-wealth households in ${fmt(d.ua + d.ub)} gap ${d.ua + d.ub === 1 ? "PIN" : "PINs"} (Class A ${fmt(d.ua)}, B ${fmt(d.ub)})</span><br>Class A PINs: ${fmt(d.a)} · B: ${fmt(d.b)}<div class="act">Click to see every PIN here graded A to D</div>`;
+      }
+      if (NX.mode === "pulse") {
+        const M = (NX.dmeta || {})[id] || {}, k = NX.pmetric[NX.pcat] || PCAT[NX.pcat].m[0][0], v = ctxVal(id, k), r = ctxRank(k, v);
+        return `<b>${esc(M.n || districtName(id) || "District")}</b>${M.s ? `<span class="mut"> · ${esc(M.s)}</span>` : ""}<div class="big">${ctxFmt(k, v)}</div><span class="mut">${esc(ctxLabel(k))}${r ? ` · top ${r}% of districts` : ""}</span><div class="act">Click for this district's ${esc(NX.pcat.toLowerCase())} numbers</div>`;
       }
       const d = NX.weather.districts[id], M = (NX.dmeta || {})[id] || {}; if (!d) return "";
       const p = primary(d.flags);

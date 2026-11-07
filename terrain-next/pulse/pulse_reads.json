@@ -1,0 +1,229 @@
+{
+ "_Paints": {
+  "read": "Owned media is the whole game: 96% of paint views this month sit on brand channels, led by Asian Paints' Diwali film (130M). Independent talk comes from investors and painters, not homeowners. Painters ask about scheme points and payouts, the one sign of the influencer channel on YouTube.",
+  "head": "Paint brands talk; homeowners rarely do. 96% of paint views are on brand channels."
+ },
+ "_Two-wheelers": {
+  "read": "The only category where talk is about the product: almost every relevant comment is from a rider or buyer. TVS leads independent attention on its EICMA reveal; Ather owners are the most negative, on the belt drive and the price of the Pro Pack.",
+  "head": "TVS wins attention; Ather owners are the unhappiest."
+ },
+ "_Quick commerce": {
+  "read": "Attention comes from viral moments, not the service: two shorts (regret over Blinkit sweets, a rider dancing Garba) carry 57% of independent views. The comments that do discuss the service are about food quality (Blinkit) and refunds and consumer-court cases (Zepto).",
+  "head": "Viral moments drive attention, not the service. Blinkit draws 61% of it."
+ },
+ "Asian Paints": {
+  "read": "Two voices disagree. Consumers who comment rate the quality highly (5 of 7 positive); investors are bearish (5 of 7 negative) on the share price and the threat from Birla Opus.",
+  "quotes": [
+   {
+    "v": "qbfrxYB23FA",
+    "voice": "c",
+    "s": "+",
+    "text": "Quality means Asian Paints."
+   },
+   {
+    "v": "qbfrxYB23FA",
+    "voice": "i",
+    "s": "-",
+    "text": "The story has changed. Profits could halve in two years."
+   }
+  ],
+  "worry": "share price (investors)"
+ },
+ "Berger": {
+  "read": "Nothing to read. The independent videos that matched Berger this month drew comments about other things.",
+  "quotes": []
+ },
+ "Nerolac": {
+  "read": "The jingle is the asset. The Yashraj Mukhate remix drew 46M views on Nerolac's channel, and every relevant independent comment is nostalgia for the tune. No one talks about the paint.",
+  "quotes": [
+   {
+    "v": "XS7SfSmHUdo",
+    "voice": "a",
+    "s": "+",
+    "text": "Goosebumps when the Nerolac theme started."
+   }
+  ]
+ },
+ "Indigo Paints": {
+  "read": "Too little to read: about 24 thousand independent views, mostly results coverage.",
+  "quotes": []
+ },
+ "Birla Opus": {
+  "read": "The ad travels; the product is still contested. Its unity ad drew 6.0M views when an ad channel re-posted it, and 4 of 5 reactions are positive. Consumers split (2 positive, 3 negative). Painters ask about scheme points and a delayed payout.",
+  "quotes": [
+   {
+    "v": "UtKP-64ydtw",
+    "voice": "a",
+    "s": "+",
+    "text": "The one ad I never skip."
+   },
+   {
+    "v": "qbfrxYB23FA",
+    "voice": "c",
+    "s": "-",
+    "text": "Shopkeepers kept pushing Birla Opus, but we still chose Asian Paints."
+   }
+  ],
+  "worry": "painter scheme payouts"
+ },
+ "Hero": {
+  "read": "Evenly split (7 positive, 7 negative of 18). Design updates win praise, notably the Xtreme 160R 4V and the Splendor editions. Doubts centre on engine quality, plus one long service complaint.",
+  "quotes": [
+   {
+    "v": "xFqlMXLmf4Q",
+    "voice": "c",
+    "s": "+",
+    "text": "A worthwhile update to the Xtreme 160R 4V: good design and features."
+   },
+   {
+    "v": "1TmowF1rCMs",
+    "voice": "c",
+    "s": "-",
+    "text": "They opened my engine 30 times in 18 months."
+   }
+  ],
+  "worry": "engine quality"
+ },
+ "Honda": {
+  "read": "Leans negative. Owners of the SP 125 and Shine report hard suspension, and buyers keep asking when ABS and LED lamps arrive. Mileage is why people still buy.",
+  "quotes": [
+   {
+    "v": "Q8OI91SRaFs",
+    "voice": "c",
+    "s": "-",
+    "text": "Bought it last month: suspension very hard, clutch hard too."
+   },
+   {
+    "v": "Q8OI91SRaFs",
+    "voice": "c",
+    "s": "-",
+    "text": "Rear suspension is poor, but mileage is excellent: 63 km/l."
+   }
+  ],
+  "worry": "hard suspension; no ABS yet"
+ },
+ "TVS": {
+  "read": "Most watched (37% of independent views) and most positive. The Apache RTR 125 shown at EICMA draws admiration, but 3 of 14 resent that it was shown abroad first.",
+  "quotes": [
+   {
+    "v": "IPa7kdZS2RA",
+    "voice": "c",
+    "s": "+",
+    "text": "TVS nailed it with the radial caliper."
+   },
+   {
+    "v": "iRuX2AsySBU",
+    "voice": "c",
+    "s": "-",
+    "text": "An Indian brand showing its bike in Milan first. I don't like that."
+   }
+  ],
+  "worry": "shown abroad before India"
+ },
+ "Bajaj": {
+  "read": "Mildly positive. The Pulsar N250 is called the best value under ₹2 lakh. Spare-parts availability is the recurring worry.",
+  "quotes": [
+   {
+    "v": "Oq294cUc-YA",
+    "voice": "c",
+    "s": "+",
+    "text": "The N250SS is now the default best-value bike under ₹2 lakh."
+   },
+   {
+    "v": "LvOae94421U",
+    "voice": "c",
+    "s": "-",
+    "text": "After a few years you can't get spare parts."
+   }
+  ],
+  "worry": "spare-parts availability"
+ },
+ "Ather": {
+  "read": "Strongly negative (15 of 16). Two complaints dominate: the belt drive (noise and breakage) and the Pro Pack, which owners describe as ₹16,000 to ₹25,000 extra for software. One owner notes the new model drops the belt.",
+  "quotes": [
+   {
+    "v": "Xq9Luo3iikE",
+    "voice": "c",
+    "s": "-",
+    "text": "Don't buy the Rizta: the belt drive keeps breaking."
+   },
+   {
+    "v": "zWhrIPmYUzI",
+    "voice": "c",
+    "s": "-",
+    "text": "Good scooters, but ₹25,000 for a software pack is blackmail."
+   }
+  ],
+  "worry": "belt drive and the Pro Pack price"
+ },
+ "Blinkit": {
+  "read": "Most watched by far (61% of independent views), mostly from one short about regretting Blinkit sweets (3.7M). Consumer comments are negative on food quality and safety (7 of 9). One asks for delivery in South Sikkim.",
+  "quotes": [
+   {
+    "v": "DunFFH9xAio",
+    "voice": "c",
+    "s": "-",
+    "text": "Packed rasgullas smell of perfume, sometimes of medicine."
+   },
+   {
+    "v": "JKN4ohwvuD4",
+    "voice": "c",
+    "s": "-",
+    "text": "Good to know, but it doesn't deliver in South Sikkim."
+   }
+  ],
+  "worry": "food quality and safety"
+ },
+ "Zepto": {
+  "read": "Too few consumer comments to score. Talk centres on a consumer-court case that began over ₹34, refunds of handling charges, and rider pay.",
+  "quotes": [
+   {
+    "v": "74-EjttjPSk",
+    "voice": "c",
+    "s": "-",
+    "text": "When you claim a refund for a damaged item, ask for the handling charge back too."
+   },
+   {
+    "v": "GVheWx29RFw",
+    "voice": "t",
+    "s": "+",
+    "text": "He earns ₹2,500 in three days; here we get ₹200 a day."
+   }
+  ],
+  "worry": "refunds and consumer-court case"
+ },
+ "Swiggy Instamart": {
+  "read": "Too few to score. Attention comes from a PS5 warranty dispute with Sony over an Instamart purchase and a paper-bag buyback.",
+  "quotes": [
+   {
+    "v": "xFnQ6cuwFrs",
+    "voice": "c",
+    "s": "-",
+    "text": "They delivered non-veg instead of veg, then banned me when I complained."
+   }
+  ]
+ },
+ "BigBasket": {
+  "read": "Too little to read: about 36 thousand independent views, mostly coupon videos. Commenters say offers vanish at checkout.",
+  "quotes": [
+   {
+    "v": "B-gTabQotmU",
+    "voice": "c",
+    "s": "-",
+    "text": "The offer disappears as soon as I add it."
+   }
+  ],
+  "worry": "offers vanish at checkout"
+ },
+ "Flipkart Minutes": {
+  "read": "Owned media only. Flipkart's own Diwali and Halloween films drew 95M views; independent views are about 40 thousand. Comments ask how to work at its hubs.",
+  "quotes": [
+   {
+    "v": "x5ThmLhI738",
+    "voice": "t",
+    "s": "0",
+    "text": "There's a Flipkart Minutes warehouse near my home. Can I join?"
+   }
+  ]
+ }
+}

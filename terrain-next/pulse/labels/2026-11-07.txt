@@ -1,0 +1,280 @@
+# Brand Pulse labels, 7 November 2026. One line per comment id: voice sentiment theme
+# voice: c consumer, t trade (painter, dealer, mechanic, rider, picker), i investor, a reaction to an ad or creator content, x not about the brand
+# sentiment: + positive, - negative, 0 neutral or a question. theme: q quality or reliability, p price, offers or schemes, s service, delivery or parts, d design or features, o other
+# Labelled by reading each comment (Hindi, Hinglish, Tamil, Telugu, Kannada, Malayalam, Bengali). Paraphrases in pulse_quotes.json are ours.
+## Asian Paints
+6daf562c4360 c + o
+48af72061d21 c 0 d
+87ea0c4b4bf7 x
+7e464c8380ac c - o
+f576dca1e7b5 c + q
+458ec2347c1b i - o
+089574117b33 c + q
+be8e5eedba65 i - o
+6b3ce3e58a3a x
+409ec4700381 x
+5dc88e7b19f6 i 0 o
+f9e35eed8d90 i - o
+adae5173d0e7 c + q
+efc98e196cc7 x
+b59ff49e6b0d c + q
+a385e6a0bdd2 i - o
+f760fef82ef7 i - o
+9773a3c9cac6 i + o
+9b0e4a1be1f0 x
+8e2722167861 t 0 p
+## Berger
+abb90fc4234c x
+d11c2cc698e0 x
+7fd35646d2db x
+79465b56e126 x
+12eb9d4886c7 x
+09d8327587a0 x
+796351831af5 x
+cbd423dc79a0 x
+581a1350fedc x
+a7d54646899e x
+39efa57f455b x
+3de79ed6854e x
+8d06cf2189b3 x
+f7bb04229aea x
+442e98326dc9 x
+## Nerolac
+e194a41bf5f1 a + o
+b0f224d27e0e a + o
+bd8bec4fe7d7 a + o
+4381e08b53c3 a + o
+deaa0981581d a + o
+4edcf4a06da3 a + o
+5a9942c9d940 t 0 p
+2602f635b155 x
+b0d1e98e843b x
+6f14431ba7a2 x
+f1fedc1f9f2b x
+b1c70a7cb70b x
+fd9c4a1673d7 x
+83d43e7bdeb8 x
+b5de86034dd5 x
+ae5ee64e95cf x
+40be8a567f88 x
+8234abf1267c x
+acb79aa7c4cf x
+## Indigo Paints
+78a907e29323 x
+243dcf33efbe x
+80438bd9ad64 c 0 p
+dca5cf42465a i - o
+## Birla Opus
+fb69ad237e5b a + o
+2bfaea5cd3dc a + o
+d0b5b6f96a89 a + o
+8bb1fe6dbccf a + o
+b33707872a68 a 0 o
+290b77d8a56c x
+f22d3d0d8731 c + q
+9a80b093dcb8 c - o
+ea5ed13beb4a x
+089574117b33 c - q
+4a15a10bf3c9 x
+ef99d3063ffb t - s
+dd9bd88b8fbf c + q
+548d7b8f2735 c 0 d
+64b4dc3025a9 t 0 p
+8d89fe4f0c2c i + o
+02a2f795b2f3 x
+55e60112f0f4 c - o
+e127f097bf97 t 0 s
+c7634a8da2ac t 0 s
+## Hero
+56b9cba8d3ef c + o
+331290d81753 c + d
+ae024810026c c 0 d
+563736a820b0 c - q
+eb8622c296de c - d
+37f8cc5c449d c 0 d
+899bfe119bc5 c + d
+266e7caf0558 c 0 d
+882923fcc9df c - d
+1e3b7d4f771d x
+19ae047d270d c - s
+7907b9c445f0 c + o
+4ebd525c462d c - q
+dbe91788f76d c 0 d
+20668a3528a2 c + d
+0363edc1e19e c - q
+aa6d16d649ce x
+ed77e60247c2 c - d
+a3893857d3bc c + d
+249ed8c8d9fc c + d
+## Honda
+2916f70ff1d4 c - q
+d954e154a8f2 c - d
+dc5d6515e2bb c + o
+bb53327b2753 x
+4ee0e293a7e6 x
+0c2b9c541739 c - q
+dfe6e3874ca1 c - q
+473cf9875f30 c 0 d
+04300a6a547f c 0 p
+81d156694109 c 0 d
+a9f885d9a65b c - q
+305e78978b0e c + o
+74a807076be2 c - p
+262a99f0cdab c 0 d
+172ed683fa22 c 0 d
+5288561f2005 c - d
+9ae87bdfe18e c 0 d
+a74a33a764a6 x
+3b0134540f24 c + o
+dff9bffc807b c 0 d
+## TVS
+453d9514c8c3 c 0 d
+833efc8a8757 c 0 o
+1833993c0607 c + d
+ba13bc7fce9f c - o
+a3d413adc4f1 x
+3ee96089de30 x
+625f7f125e8b c - o
+860aa3bf37eb c + d
+d2ebf652015c c 0 d
+262de6f4e719 x
+f4160eeb2e1d c + d
+756835bb90ef c - o
+0e7050f0697c c + d
+29d0f6ca2ff5 c + d
+b6f1bd32a64c c + q
+50fc03e71dfb c 0 d
+4fe633413a1d c + o
+fb32fd8a3ee2 x
+60a90db57319 x
+4b34927f884c t 0 q
+## Bajaj
+6ac9d98ca605 c + p
+50efd0522dc3 c + d
+549cb409acb6 c + o
+407ff62afb43 c + q
+d0140ac2186e c + q
+99cfd4695257 x
+8fd121e9d232 c 0 d
+6132cb441dfc c - d
+eeba8c513e80 c - q
+fee7f71081e8 c 0 d
+a030afddaa35 x
+ced684ffa718 c - s
+5a78ab90b4fc x
+16b25b89dde3 x
+2adc46800101 c 0 d
+8b8882d0740d x
+6ed52286985b x
+4b8cdf0b8587 c 0 d
+574650054f29 c - s
+607cae7fae3f c 0 q
+## Ather
+470ebfac1453 c - p
+e5545bda2e3c c - d
+4db8eb7c2f63 c - p
+38ee82af0621 c - q
+4001968ee301 c - p
+1d1c7d348d5f c - p
+55fbdec22d8d c - p
+d85e903b407b x
+dedc84ef98b9 c - q
+c50870afd622 c - q
+55bc9c32a041 c - q
+cc6b8f598a3b c - q
+dbff8e09521d c - q
+c4b16c62ba27 c - s
+9342e646c5ad c + d
+0fd37f05f712 x
+c745fa61c1b4 x
+fd163c8ca42d x
+1b66652510af c - q
+44c647ff5ae8 c - q
+## Blinkit
+d5581bc41166 a 0 o
+ca7520d1a5fd x
+5002c71f106f x
+7b78652a30cc a 0 s
+e6b884b6df7c a 0 o
+ec49fb64cb83 c - q
+6bc82a40fd26 x
+13a80519f371 a + o
+421c6bb46737 x
+64548bf36a0b c - q
+561cacf3bf2c x
+06fed4c5af5e c 0 q
+02d64023eaac x
+f596ba10a560 c - s
+23568cecb2d7 c - q
+d88e0b508bca c - q
+04baa51f92e8 c 0 q
+eee388346314 x
+a2caa84b4326 c - o
+6507aef3f950 c - q
+## Zepto
+c9f18d497e0d c - s
+6603bd9397e4 t - o
+27f2c6d5f309 x
+8dbdea1f4013 c - p
+5c74a7e1dd9b t 0 o
+b60cd033a029 c - s
+8dfec5ab5929 x
+7e83747b3bbe x
+afdced4499fe x
+cceec9a6a480 x
+5ae76a5811ff x
+3badf1de837f c + q
+7599530ecda9 c 0 p
+15499e5e1add t + o
+e6e9f5d959af c - s
+258b8e411f2c t 0 o
+39b18a50ec1a x
+c17b6154bd60 x
+781e5441155d x
+b69fb0476a9b x
+## Swiggy Instamart
+21bd03994e57 c - s
+79059e8b323d x
+3b5a7bf5701c x
+52b060ebad21 c 0 s
+859c022d6e60 x
+885bd6dbef40 t 0 o
+b846dba813eb x
+d65d3a2b0bb9 c + o
+ded340a55c4e c - p
+d13c4ed34780 c 0 o
+0bcb73cce0a8 x
+ba7645b0a7c0 c 0 o
+aac0d5fb5f3b x
+bd9ebb7fc6c6 x
+9226bb9934aa x
+67d54f002512 x
+0affd2ec14d9 x
+e77fde0a2d48 x
+fd2647924916 x
+c6db66e0d3a8 x
+## BigBasket
+46c8e212c21c c + p
+370db094cb63 x
+f42373ebcfda x
+ea9327468555 x
+30987d982868 x
+d1fc7fc7e889 x
+82ee5fd0117f c - p
+e44669aac7d9 c - p
+e273a28f1734 x
+ae3e24a85609 x
+40cf21cfa400 x
+6def1004f300 x
+7c749e1cec12 c - p
+69c98b488160 x
+80ea03dfd305 x
+7139d721590c t 0 o
+## Flipkart Minutes
+f88cc50d81d4 x
+1d150ef0b069 a + o
+05f3c70bff43 a + o
+e5454697b3f6 x
+010a688ba19a t 0 o
+9cbcad20de67 t 0 o
+cdb9de2a583e x

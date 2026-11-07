@@ -1,0 +1,38 @@
+{
+  "Paints": [
+    {"name": "Asian Paints", "q": "\"Asian Paints\" -share -stock", "own": ["^asian ?paints"],
+     "mention": "asian ?paint|royale|apcolite|apex ultima|tractor emulsion|एशियन"},
+    {"name": "Berger", "q": "\"Berger Paints\"|\"Berger Silk\"|\"Berger WeatherCoat\" -nepal -share -stock", "own": ["^berger paints india"],
+     "mention": "berger|बर्जर|weather ?coat"},
+    {"name": "Nerolac", "q": "Nerolac -share -stock", "own": ["^nerolac"],
+     "mention": "nerolac|नेरोलैक|नेरोलक"},
+    {"name": "Indigo Paints", "q": "\"Indigo Paints\" -share -stock -shares -target -results", "own": ["^indigo paints"],
+     "mention": "indigo|इंडिगो"},
+    {"name": "Birla Opus", "q": "\"Birla Opus\" -share -stock", "own": ["^birla opus"],
+     "mention": "opus|birla|बिरला"}
+  ],
+  "Two-wheelers": [
+    {"name": "Hero", "q": "\"Hero Splendor\"|\"Hero MotoCorp\"|\"Hero Xtreme\" -share -stock", "own": ["^hero ?moto ?corp"],
+     "mention": "\\bhero\\b|splendor|xtreme|glamour|passion|हीरो|स्प्लेंडर"},
+    {"name": "Honda", "q": "\"Honda Activa\"|\"Honda Shine\"|\"Honda SP 125\" -share -stock", "own": ["^honda ?2 ?wheelers", "^honda motorcycle"],
+     "mention": "honda|activa|\\bshine\\b|sp ?125|होंडा|एक्टिवा"},
+    {"name": "TVS", "q": "\"TVS Jupiter\"|\"TVS Apache\"|\"TVS Raider\" -share -stock", "own": ["^tvs motor"],
+     "mention": "\\btvs\\b|jupiter|apache|raider|ntorq|टीवीएस"},
+    {"name": "Bajaj", "q": "\"Bajaj Pulsar\"|\"Bajaj Chetak\"|\"Bajaj Platina\" -share -stock", "own": ["^bajaj auto"],
+     "mention": "bajaj|pulsar|chetak|platina|बजाज|पल्सर"},
+    {"name": "Ather", "q": "\"Ather Rizta\"|\"Ather 450\" -share -stock", "own": ["^ather"],
+     "mention": "ather|rizta|एथर"}
+  ],
+  "Quick commerce": [
+    {"name": "Blinkit", "q": "Blinkit -share -stock -eternal", "own": ["^blinkit"],
+     "mention": "blinkit|ब्लिंकिट"},
+    {"name": "Zepto", "q": "Zepto -share -stock -ipo", "own": ["^zepto"],
+     "mention": "zepto|जेप्टो"},
+    {"name": "Swiggy Instamart", "q": "\"Swiggy Instamart\"|Instamart -share -stock", "own": ["^swiggy"],
+     "mention": "instamart|swiggy|स्विगी"},
+    {"name": "BigBasket", "q": "BigBasket|\"bb now\" -share -stock", "own": ["^bigbasket"],
+     "mention": "big ?basket|bb ?now"},
+    {"name": "Flipkart Minutes", "q": "\"Flipkart Minutes\" -puja -pass -share -stock", "own": ["^flipkart"],
+     "mention": "minutes|flipkart|फ्लिपकार्ट"}
+  ]
+}
