@@ -1,4 +1,4 @@
-# Deal Radar run 2026-11-23T05:06:02+00:00
+# Deal Radar run 2026-11-23T07:11:34+00:00
 
 - ★ **ARBITRAGE** [Frederique Constant Manufacture Classic Flyback Chronograph FC-760NS4H6](https://www.watchdirect.com.au/products/frederique-constant-manufacture-classic-flyback-chronograph-fc-760ns4h6) $7495 at Watch Direct vs $9350 at Starbuy (save $1855, 19.8%)
 - **ARBITRAGE** [Accutron Spaceview Evolution 27A205A](https://www.watchdirect.com.au/products/accutron-spaceview-evolution-27a205a) $3516 at Watch Direct vs $7199 at Starbuy (save $3683, 51.2%)
@@ -12,3 +12,9 @@
 - ★ **ARBITRAGE** [Tom Ford Eau De Soleil Blanc EDT 100ml](https://www.myperfumeshop.com.au/products/tom-ford-eau-de-soleil-blanc-edt?variant=67652254007428) $245 at My Perfume Shop vs $409 at The Perfume Warehouse (save $164, 40.1%)
 - **ARBITRAGE** [The Revenge Of Lady Blanche 75ml Eau de Parfum](https://theperfumewarehouse.com.au/products/the-revenge-of-lady-blanche-by-penhaligons-for-women-eau-de-parfum-bottle) $198 at The Perfume Warehouse vs $519 at My Perfume Shop (save $321, 61.8%)
 - ★ **ARBITRAGE** [Mancera Fabulous Yuzu EDP 120ml](https://www.myperfumeshop.com.au/products/mancera-fabulous-yuzu-edp?variant=41873907220612) $139 at My Perfume Shop vs $299 at The Perfume Warehouse (save $160, 53.5%)
+- ★ **PRICE DROP** [Nike Women's Air Max Moto 2K SE Pink](https://www.culturekings.com.au/products/nike-women-s-air-max-moto-2k-se-pink) $63 at Culture Kings, down from $168 (-62.5%, save $105)
+- ★ **PRICE DROP** [Adidas Gazelle Indoor Light Blue](https://www.culturekings.com.au/products/adidas-gazelle-indoor-light-blue) $59 at Culture Kings, down from $160 (-63.1%, save $101)
+- ★ **PRICE DROP** [Adidas Women's Gazelle Indoor Grey](https://www.culturekings.com.au/products/adidas-women-s-gazelle-indoor-grey) $59 at Culture Kings, down from $159 (-62.9%, save $100)
+- ★ **PRICE DROP** [Nike Women's Air Force 1 '07 White/Pink](https://www.culturekings.com.au/products/nike-women-s-air-force-1-07-white-pink-2) $60 at Culture Kings, down from $160 (-62.5%, save $100)
+- ★ **PRICE DROP** [Nike Shox TL Anthracite](https://www.culturekings.com.au/products/nike-shox-tl-anthracite) $75 at Culture Kings, down from $175 (-57.1%, save $100)
+- ★ **PRICE DROP** [Nike Women's P-6000 Black/Black](https://www.culturekings.com.au/products/nike-women-s-p-6000-black-black-2) $48 at Culture Kings, down from $128 (-62.5%, save $80)

@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-11-23T05:06:02+00:00",
+  "generated_at": "2026-11-23T07:11:34+00:00",
   "first_run": false,
   "store_stats": {
     "www.watchdepot.com.au": {
-      "items": 2090,
+      "items": 2056,
       "baseline": false
     },
     "www.starbuy.com.au": {
-      "items": 873,
+      "items": 874,
       "baseline": false
     },
     "www.watchdirect.com.au": {
-      "items": 8006,
+      "items": 8001,
       "baseline": false
     },
     "theperfumewarehouse.com.au": {
@@ -27,11 +27,11 @@
       "baseline": false
     },
     "www.culturekings.com.au": {
-      "items": 4446,
+      "items": 4357,
       "baseline": false
     },
     "www.universalstore.com": {
-      "items": 8529,
+      "items": 8530,
       "baseline": false
     }
   },
@@ -299,8 +299,98 @@
       "match_key": "pf:mancera:fabulous-yuzu:edp:120",
       "advertised_rrp": 199.0,
       "priority_brand": true
+    },
+    {
+      "type": "PRICE_DROP",
+      "id": "drop:www.culturekings.com.au:7543806918790",
+      "category": "clothes",
+      "store": "Culture Kings",
+      "title": "Nike Women's Air Max Moto 2K SE Pink",
+      "brand": "Nike",
+      "url": "https://www.culturekings.com.au/products/nike-women-s-air-max-moto-2k-se-pink",
+      "price": 63.0,
+      "previous_low": 168.0,
+      "saving": 105.0,
+      "drop_pct": 62.5,
+      "advertised_rrp": 210.0,
+      "priority_brand": true
+    },
+    {
+      "type": "PRICE_DROP",
+      "id": "drop:www.culturekings.com.au:7605838741638",
+      "category": "clothes",
+      "store": "Culture Kings",
+      "title": "Adidas Gazelle Indoor Light Blue",
+      "brand": "ADIDAS",
+      "url": "https://www.culturekings.com.au/products/adidas-gazelle-indoor-light-blue",
+      "price": 59.0,
+      "previous_low": 160.0,
+      "saving": 101.0,
+      "drop_pct": 63.1,
+      "advertised_rrp": 199.99,
+      "priority_brand": true
+    },
+    {
+      "type": "PRICE_DROP",
+      "id": "drop:www.culturekings.com.au:7605838807174",
+      "category": "clothes",
+      "store": "Culture Kings",
+      "title": "Adidas Women's Gazelle Indoor Grey",
+      "brand": "ADIDAS",
+      "url": "https://www.culturekings.com.au/products/adidas-women-s-gazelle-indoor-grey",
+      "price": 59.0,
+      "previous_low": 159.0,
+      "saving": 100.0,
+      "drop_pct": 62.9,
+      "advertised_rrp": 199.99,
+      "priority_brand": true
+    },
+    {
+      "type": "PRICE_DROP",
+      "id": "drop:www.culturekings.com.au:7543800987782",
+      "category": "clothes",
+      "store": "Culture Kings",
+      "title": "Nike Women's Air Force 1 '07 White/Pink",
+      "brand": "Nike",
+      "url": "https://www.culturekings.com.au/products/nike-women-s-air-force-1-07-white-pink-2",
+      "price": 60.0,
+      "previous_low": 160.0,
+      "saving": 100.0,
+      "drop_pct": 62.5,
+      "advertised_rrp": 200.0,
+      "priority_brand": true
+    },
+    {
+      "type": "PRICE_DROP",
+      "id": "drop:www.culturekings.com.au:7543818190982",
+      "category": "clothes",
+      "store": "Culture Kings",
+      "title": "Nike Shox TL Anthracite",
+      "brand": "Nike",
+      "url": "https://www.culturekings.com.au/products/nike-shox-tl-anthracite",
+      "price": 75.0,
+      "previous_low": 175.0,
+      "saving": 100.0,
+      "drop_pct": 57.1,
+      "advertised_rrp": 250.0,
+      "priority_brand": true
+    },
+    {
+      "type": "PRICE_DROP",
+      "id": "drop:www.culturekings.com.au:7543812194438",
+      "category": "clothes",
+      "store": "Culture Kings",
+      "title": "Nike Women's P-6000 Black/Black",
+      "brand": "Nike",
+      "url": "https://www.culturekings.com.au/products/nike-women-s-p-6000-black-black-2",
+      "price": 48.0,
+      "previous_low": 128.0,
+      "saving": 80.0,
+      "drop_pct": 62.5,
+      "advertised_rrp": 160.0,
+      "priority_brand": true
     }
   ],
-  "alerts_suppressed_or_overflow": 444,
+  "alerts_suppressed_or_overflow": 521,
   "ozbargain": []
 }
