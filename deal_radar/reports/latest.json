@@ -1,0 +1,306 @@
+{
+  "generated_at": "2026-11-23T05:06:02+00:00",
+  "first_run": false,
+  "store_stats": {
+    "www.watchdepot.com.au": {
+      "items": 2090,
+      "baseline": false
+    },
+    "www.starbuy.com.au": {
+      "items": 873,
+      "baseline": false
+    },
+    "www.watchdirect.com.au": {
+      "items": 8006,
+      "baseline": false
+    },
+    "theperfumewarehouse.com.au": {
+      "items": 2296,
+      "baseline": false
+    },
+    "www.myperfumeshop.com.au": {
+      "items": 9887,
+      "baseline": false
+    },
+    "www.perfumeclearancecentre.com.au": {
+      "items": 1283,
+      "baseline": false
+    },
+    "www.culturekings.com.au": {
+      "items": 4446,
+      "baseline": false
+    },
+    "www.universalstore.com": {
+      "items": 8529,
+      "baseline": false
+    }
+  },
+  "alerts": [
+    {
+      "type": "ARBITRAGE",
+      "id": "arb:www.watchdirect.com.au:8540222587055",
+      "category": "watches",
+      "store": "Watch Direct",
+      "title": "Frederique Constant Manufacture Classic Flyback Chronograph FC-760NS4H6",
+      "brand": "Frederique Constant",
+      "url": "https://www.watchdirect.com.au/products/frederique-constant-manufacture-classic-flyback-chronograph-fc-760ns4h6",
+      "price": 7495.0,
+      "next_best_store": "Starbuy",
+      "next_best_price": 9350.0,
+      "next_best_url": "https://www.starbuy.com.au/products/frederique-constant-42mm-fc-760ns4h6",
+      "saving": 1855.0,
+      "gap_pct": 19.8,
+      "all_prices": {
+        "Watch Direct": 7495.0,
+        "Starbuy": 9350.0
+      },
+      "match_key": "ref:frederique constant:FC760NS4H6",
+      "advertised_rrp": 9350.0,
+      "priority_brand": true
+    },
+    {
+      "type": "ARBITRAGE",
+      "id": "arb:www.watchdirect.com.au:8539833270447",
+      "category": "watches",
+      "store": "Watch Direct",
+      "title": "Accutron Spaceview Evolution 27A205A",
+      "brand": "Accutron",
+      "url": "https://www.watchdirect.com.au/products/accutron-spaceview-evolution-27a205a",
+      "price": 3516.0,
+      "next_best_store": "Starbuy",
+      "next_best_price": 7199.0,
+      "next_best_url": "https://www.starbuy.com.au/products/accutron-mens-watch-27a205a",
+      "saving": 3683.0,
+      "gap_pct": 51.2,
+      "all_prices": {
+        "Watch Direct": 3516.0,
+        "Starbuy": 7199.0
+      },
+      "match_key": "ref:accutron:27A205A",
+      "advertised_rrp": 7199.0,
+      "priority_brand": false
+    },
+    {
+      "type": "ARBITRAGE",
+      "id": "arb:www.starbuy.com.au:8137540960442",
+      "category": "watches",
+      "store": "Starbuy",
+      "title": "Frederique Constant Classics 40mm FC-335MC4P5",
+      "brand": "Frederique Constant",
+      "url": "https://www.starbuy.com.au/products/frederique-constant-mens-swiss-watch-fc-335mc4p5",
+      "price": 3892.0,
+      "next_best_store": "Watch Direct",
+      "next_best_price": 5295.0,
+      "next_best_url": "https://www.watchdirect.com.au/products/frederique-constant-classics-moonphase-mens-watch-fc-335mc4p5",
+      "saving": 1403.0,
+      "gap_pct": 26.5,
+      "all_prices": {
+        "Starbuy": 3892.0,
+        "Watch Direct": 5295.0
+      },
+      "match_key": "ref:frederique constant:FC335MC4P5",
+      "advertised_rrp": 5295.0,
+      "priority_brand": true
+    },
+    {
+      "type": "ARBITRAGE",
+      "id": "arb:www.starbuy.com.au:8137550168250",
+      "category": "watches",
+      "store": "Starbuy",
+      "title": "Frederique Constant Classics 39mm FC-301S3B5",
+      "brand": "Frederique Constant",
+      "url": "https://www.starbuy.com.au/products/frederique-constant-38-5-mm-mens-swiss-watch-fc-301s3b5",
+      "price": 3598.0,
+      "next_best_store": "Watch Direct",
+      "next_best_price": 4895.0,
+      "next_best_url": "https://www.watchdirect.com.au/products/frederique-constant-classics-premiere-automatic-mens-watch-fc-301s3b5",
+      "saving": 1297.0,
+      "gap_pct": 26.5,
+      "all_prices": {
+        "Starbuy": 3598.0,
+        "Watch Direct": 4895.0
+      },
+      "match_key": "ref:frederique constant:FC301S3B5",
+      "advertised_rrp": 4895.0,
+      "priority_brand": true
+    },
+    {
+      "type": "ARBITRAGE",
+      "id": "arb:www.starbuy.com.au:8137510781114",
+      "category": "watches",
+      "store": "Starbuy",
+      "title": "Frederique Constant Classics 30mm FC-200MPW2AR6B",
+      "brand": "Frederique Constant",
+      "url": "https://www.starbuy.com.au/products/frederique-constant-ladies-watch-fc-200mpw2ar6b",
+      "price": 1486.0,
+      "next_best_store": "Watch Direct",
+      "next_best_price": 2350.0,
+      "next_best_url": "https://www.watchdirect.com.au/products/frederique-constant-art-deco-carree-fc-200mpw2ar6b",
+      "saving": 864.0,
+      "gap_pct": 36.8,
+      "all_prices": {
+        "Starbuy": 1486.0,
+        "Watch Direct": 2350.0
+      },
+      "match_key": "ref:frederique constant:FC200MPW2AR6B",
+      "advertised_rrp": 2350.0,
+      "priority_brand": true
+    },
+    {
+      "type": "ARBITRAGE",
+      "id": "arb:www.starbuy.com.au:8137550004410",
+      "category": "watches",
+      "store": "Starbuy",
+      "title": "Frederique Constant Classics 37mm FC-206B3S6",
+      "brand": "Frederique Constant",
+      "url": "https://www.starbuy.com.au/products/frederique-constant-37mm-mens-swiss-watch-fc-206b3s6",
+      "price": 1388.0,
+      "next_best_store": "Watch Direct",
+      "next_best_price": 2195.0,
+      "next_best_url": "https://www.watchdirect.com.au/products/frederique-constant-classics-moneta-moonphase-fc-206b3s6",
+      "saving": 807.0,
+      "gap_pct": 36.8,
+      "all_prices": {
+        "Starbuy": 1388.0,
+        "Watch Direct": 2195.0
+      },
+      "match_key": "ref:frederique constant:FC206B3S6",
+      "advertised_rrp": 2195.0,
+      "priority_brand": true
+    },
+    {
+      "type": "ARBITRAGE",
+      "id": "arb:www.myperfumeshop.com.au:7248296116356:50974464540804",
+      "category": "perfume",
+      "store": "My Perfume Shop",
+      "title": "Xerjoff Opera EDP 100ml",
+      "brand": "Xerjoff",
+      "url": "https://www.myperfumeshop.com.au/products/xerjoff-opera-edp?variant=50974464540804",
+      "price": 359.0,
+      "next_best_store": "The Perfume Warehouse",
+      "next_best_price": 599.0,
+      "next_best_url": "https://theperfumewarehouse.com.au/products/opera-100ml-eau-de-parfum-by-xerjoff-for-unisex-bottle",
+      "saving": 240.0,
+      "gap_pct": 40.1,
+      "all_prices": {
+        "My Perfume Shop": 359.0,
+        "The Perfume Warehouse": 599.0
+      },
+      "match_key": "pf:xerjoff:opera:edp:100",
+      "advertised_rrp": 439.0,
+      "priority_brand": true
+    },
+    {
+      "type": "ARBITRAGE",
+      "id": "arb:www.myperfumeshop.com.au:7209115189380:41694057824388",
+      "category": "perfume",
+      "store": "My Perfume Shop",
+      "title": "Mancera Aoud Orchid EDP 120ml",
+      "brand": "Mancera",
+      "url": "https://www.myperfumeshop.com.au/products/mancera-aoud-orchid-edp?variant=41694057824388",
+      "price": 105.0,
+      "next_best_store": "The Perfume Warehouse",
+      "next_best_price": 299.0,
+      "next_best_url": "https://theperfumewarehouse.com.au/products/aoud-orchid-120ml-eau-de-parfum-by-mancera-for-unisex-bottle",
+      "saving": 194.0,
+      "gap_pct": 64.9,
+      "all_prices": {
+        "My Perfume Shop": 105.0,
+        "The Perfume Warehouse": 299.0
+      },
+      "match_key": "pf:mancera:aoud-orchid:edp:120",
+      "advertised_rrp": 249.0,
+      "priority_brand": true
+    },
+    {
+      "type": "ARBITRAGE",
+      "id": "arb:www.myperfumeshop.com.au:7261493035140:44840469364868",
+      "category": "perfume",
+      "store": "My Perfume Shop",
+      "title": "Xerjoff Accento EDP 100ml",
+      "brand": "Xerjoff",
+      "url": "https://www.myperfumeshop.com.au/products/xerjoff-accento-edp?variant=44840469364868",
+      "price": 329.0,
+      "next_best_store": "The Perfume Warehouse",
+      "next_best_price": 499.0,
+      "next_best_url": "https://theperfumewarehouse.com.au/products/accento100ml-eau-de-parfum-by-xerjoff-for-unisex-bottle",
+      "saving": 170.0,
+      "gap_pct": 34.1,
+      "all_prices": {
+        "My Perfume Shop": 329.0,
+        "The Perfume Warehouse": 499.0
+      },
+      "match_key": "pf:xerjoff:accento:edp:100",
+      "advertised_rrp": 379.0,
+      "priority_brand": true
+    },
+    {
+      "type": "ARBITRAGE",
+      "id": "arb:www.myperfumeshop.com.au:8180988674180:67652254007428",
+      "category": "perfume",
+      "store": "My Perfume Shop",
+      "title": "Tom Ford Eau De Soleil Blanc EDT 100ml",
+      "brand": "Tom Ford",
+      "url": "https://www.myperfumeshop.com.au/products/tom-ford-eau-de-soleil-blanc-edt?variant=67652254007428",
+      "price": 245.0,
+      "next_best_store": "The Perfume Warehouse",
+      "next_best_price": 409.0,
+      "next_best_url": "https://theperfumewarehouse.com.au/products/eau-de-soleil-blanc-by-tom-ford-for-unisex-eau-de-toilette-bottle",
+      "saving": 164.0,
+      "gap_pct": 40.1,
+      "all_prices": {
+        "My Perfume Shop": 245.0,
+        "The Perfume Warehouse": 409.0
+      },
+      "match_key": "pf:tomford:blanc-de-eau-soleil:edt:100",
+      "advertised_rrp": 339.0,
+      "priority_brand": true
+    },
+    {
+      "type": "ARBITRAGE",
+      "id": "arb:theperfumewarehouse.com.au:6879363498176",
+      "category": "perfume",
+      "store": "The Perfume Warehouse",
+      "title": "The Revenge Of Lady Blanche 75ml Eau de Parfum",
+      "brand": "PENHALIGON'S",
+      "url": "https://theperfumewarehouse.com.au/products/the-revenge-of-lady-blanche-by-penhaligons-for-women-eau-de-parfum-bottle",
+      "price": 198.0,
+      "next_best_store": "My Perfume Shop",
+      "next_best_price": 519.0,
+      "next_best_url": "https://www.myperfumeshop.com.au/products/penhaligons-the-revenge-of-lady-blanche-edp",
+      "saving": 321.0,
+      "gap_pct": 61.8,
+      "all_prices": {
+        "The Perfume Warehouse": 198.0,
+        "My Perfume Shop": 519.0
+      },
+      "match_key": "pf:penhaligons:blanche-lady-of-revenge-the:edp:75",
+      "advertised_rrp": 508.0,
+      "priority_brand": false
+    },
+    {
+      "type": "ARBITRAGE",
+      "id": "arb:www.myperfumeshop.com.au:7284323844228:41873907220612",
+      "category": "perfume",
+      "store": "My Perfume Shop",
+      "title": "Mancera Fabulous Yuzu EDP 120ml",
+      "brand": "Mancera",
+      "url": "https://www.myperfumeshop.com.au/products/mancera-fabulous-yuzu-edp?variant=41873907220612",
+      "price": 139.0,
+      "next_best_store": "The Perfume Warehouse",
+      "next_best_price": 299.0,
+      "next_best_url": "https://theperfumewarehouse.com.au/products/fabulous-yuzu-120ml-eau-de-parfum-by-mancera-for-unisex-bottle",
+      "saving": 160.0,
+      "gap_pct": 53.5,
+      "all_prices": {
+        "My Perfume Shop": 139.0,
+        "The Perfume Warehouse": 299.0
+      },
+      "match_key": "pf:mancera:fabulous-yuzu:edp:120",
+      "advertised_rrp": 199.0,
+      "priority_brand": true
+    }
+  ],
+  "alerts_suppressed_or_overflow": 444,
+  "ozbargain": []
+}
