@@ -1,21 +1,5 @@
 {
-  "generated_at": "2026-11-24T01:53:47+00:00",
-  "input_rows": 42,
-  "findings": [
-    {
-      "type": "ARBITRAGE",
-      "id": "arb:https://www.chemistwarehouse.com.au/buy/100810/carolina-herrera-good-girl-eau-de-parfum-30ml",
-      "store": "Chemist Warehouse",
-      "title": "Carolina Herrera Good Girl Eau de Parfum 30ml",
-      "url": "https://www.chemistwarehouse.com.au/buy/100810/carolina-herrera-good-girl-eau-de-parfum-30ml",
-      "price": 59.99,
-      "next_best_store": "Perfume Clearance Centre",
-      "next_best_price": 124.95,
-      "next_best_url": "https://www.perfumeclearancecentre.com.au/products/carolina-herrera-good-girl-eau-de-parfum-50ml-copy",
-      "saving": 64.96,
-      "gap_pct": 52.0,
-      "category": "perfume",
-      "match_key": "pf:carolinaherrera:girl-good:edp:30"
-    }
-  ]
+  "generated_at": "2026-11-24T03:53:38+00:00",
+  "input_rows": 44,
+  "findings": []
 }
