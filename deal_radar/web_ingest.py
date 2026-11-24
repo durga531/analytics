@@ -12,7 +12,9 @@ import json
 import sys
 from datetime import datetime, timezone
 
-from scan import STATE, REPORTS, ROOT, load_json, save_json, pf_key, ref_candidates, norm_brand
+import re
+
+from scan import STATE, REPORTS, ROOT, load_json, save_json, pf_key, ref_candidates, norm_brand, is_grail
 
 
 def keys_for(row):
@@ -44,11 +46,27 @@ def main(path):
 
     ac = cfg["arbitrage"]
     out = []
+    g = cfg.get("grail", {})
+    junk = re.compile(r"repair|parts|not working|spares|replica|homage|strap only|box only|dial only|movement only", re.I)
     for r in rows:
         try:
-            price = float(r["price"])
+            price = float(str(r["price"]).replace(",", "").replace("$", ""))
         except (KeyError, TypeError, ValueError):
             continue
+        if junk.search(r.get("title", "")):
+            continue
+        preowned = str(r.get("condition", "")).lower().startswith(("pre", "used", "vintage"))
+        min_gap_pct = g.get("preowned_min_gap_pct", 45) if preowned else ac["min_gap_pct"]
+        floors = g.get("absolute_floor_aud", {})
+        hay = f"{r.get('brand','')} {r['title']}".lower()
+        for fb, floor in floors.items():
+            if re.search(r"(?<![a-z])" + re.escape(fb) + r"(?![a-z])", hay) and price < floor:
+                out.append({"type": "BELOW_FLOOR", "id": f"floor:{r['url']}", "store": r["store"], "title": r["title"],
+                            "url": r["url"], "price": price, "floor": floor, "saving": round(floor - price, 2),
+                            "category": "watches", "condition": r.get("condition"), "grail": True,
+                            "verify": "Open this listing page and confirm it is a genuine, complete, working watch "
+                                      "(not parts, strap, box, replica) before notifying."})
+                break
         prev = web_hist.get(r["url"])
         lo = min(price, prev["lo"]) if prev else price
         th = cfg["thresholds"].get(r["category"], cfg["thresholds"]["clothes"])
@@ -62,12 +80,13 @@ def main(path):
             if not other:
                 continue
             gap = other["p"] - price
-            if gap >= ac["min_gap_aud"] and gap / other["p"] * 100 >= ac["min_gap_pct"]:
+            if gap >= ac["min_gap_aud"] and gap / other["p"] * 100 >= min_gap_pct:
                 out.append({"type": "ARBITRAGE", "id": f"arb:{r['url']}", "store": r["store"], "title": r["title"],
                             "url": r["url"], "price": price, "next_best_store": other["store"],
                             "next_best_price": other["p"], "next_best_url": other["url"],
                             "saving": round(gap, 2), "gap_pct": round(gap / other["p"] * 100, 1),
-                            "category": r["category"], "match_key": k})
+                            "category": r["category"], "match_key": k, "condition": r.get("condition"),
+                            "compared_to": "cheapest new price at an AU dealer feed"})
             elif -gap >= ac["min_gap_aud"] and -gap / price * 100 >= ac["min_gap_pct"]:
                 # the advertised "sale" is beaten by a feed retailer
                 out.append({"type": "BEATEN", "id": f"beat:{r['url']}", "store": other["store"],
@@ -78,7 +97,14 @@ def main(path):
 
     extra = cfg["realert_extra_drop_pct"] / 100
     fresh = [a for a in out if alerted.get(a["id"]) is None or a["price"] <= alerted[a["id"]] * (1 - extra)]
-    fresh.sort(key=lambda a: a["saving"], reverse=True)
+    for a in fresh:
+        if a["type"] == "BELOW_FLOOR":
+            continue
+        gp = a.get("gap_pct") or (round((1 - a["price"] / a["previous_low"]) * 100, 1) if a.get("previous_low") else 0)
+        a["grail"] = bool(g) and a["type"] in ("ARBITRAGE", "PRICE_DROP") and \
+            is_grail("", a["title"], a["category"], cfg) and a["price"] + a["saving"] >= g.get("min_price_aud", 0) and \
+            gp >= (g.get("min_gap_pct", 20) if a["type"] == "ARBITRAGE" else g.get("min_drop_pct", 20))
+    fresh.sort(key=lambda a: (a.get("grail", False), a["saving"]), reverse=True)
     for a in fresh:
         alerted[a["id"]] = a["price"]
     save_json(STATE / "alerted.json", alerted)

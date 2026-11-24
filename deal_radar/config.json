@@ -17,6 +17,24 @@
       "category": "watches"
     },
     {
+      "name": "Hardy Brothers",
+      "domain": "www.hardybrothers.com.au",
+      "category": "watches",
+      "authorised": true
+    },
+    {
+      "name": "House of Kennedy",
+      "domain": "houseofkennedy.com",
+      "category": "watches",
+      "authorised": true
+    },
+    {
+      "name": "Monards",
+      "domain": "www.monards.com.au",
+      "category": "watches",
+      "authorised": true
+    },
+    {
       "name": "The Perfume Warehouse",
       "domain": "theperfumewarehouse.com.au",
       "category": "perfume"
@@ -182,10 +200,82 @@
       "universal store",
       "cettire",
       "farfetch",
-      "ssense"
+      "ssense",
+      "longines",
+      "grand seiko",
+      "tudor",
+      "omega",
+      "tag heuer",
+      "nomos",
+      "iwc",
+      "oris",
+      "breitling",
+      "chrono24"
     ],
     "min_votes_for_generic": 15,
     "note": "Direct RSS is blocked (403) from the cloud runner; the scheduled agent reads OzBargain via the Firecrawl Alexandria provider ozbargain-com-au instead, using these keywords."
   },
-  "max_alerts_per_category": 6
+  "max_alerts_per_category": 6,
+  "grail": {
+    "note": "Owner wants Longines / Grand Seiko tier watches at one-off throwaway prices. Only grail alerts trigger a phone push.",
+    "brands": [
+      "longines",
+      "grand seiko",
+      "credor",
+      "tudor",
+      "omega",
+      "iwc",
+      "jaeger-lecoultre",
+      "jaeger lecoultre",
+      "zenith",
+      "nomos",
+      "glashutte original",
+      "glashütte original",
+      "breitling",
+      "cartier",
+      "blancpain",
+      "breguet",
+      "panerai",
+      "tag heuer",
+      "oris",
+      "chopard",
+      "a. lange",
+      "lange & sohne",
+      "vacheron",
+      "audemars",
+      "patek",
+      "rolex",
+      "hublot",
+      "piaget"
+    ],
+    "min_drop_pct": 30,
+    "min_gap_pct": 30,
+    "min_dealer_markdown_pct": 40,
+    "preowned_min_gap_pct": 45,
+    "min_price_aud": 1500,
+    "standing_sale_rule": "A dealer markdown only counts if the item was not already marked down that deep at the previous scan.",
+    "absolute_floor_aud": {
+      "grand seiko": 2000,
+      "credor": 2500,
+      "longines": 600,
+      "tudor": 2000,
+      "omega": 1200,
+      "iwc": 2000,
+      "jaeger-lecoultre": 2500,
+      "zenith": 2000,
+      "nomos": 1200,
+      "breitling": 1500,
+      "cartier": 1500,
+      "tag heuer": 700,
+      "oris": 800,
+      "rolex": 4000
+    },
+    "absolute_floor_note": "Reasoned estimates of a 'too cheap to be normal' AU price for a genuine, working watch of that brand. Tune freely. A listing below its floor is verified on its own page before any push.",
+    "chrono24_pages": [
+      "https://www.chrono24.com.au/grandseiko/index.htm?countryIds=AU&sortorder=1&pageSize=60",
+      "https://www.chrono24.com.au/longines/index.htm?countryIds=AU&sortorder=1&pageSize=60",
+      "https://www.chrono24.com.au/tudor/index.htm?countryIds=AU&sortorder=1&pageSize=60",
+      "https://www.chrono24.com.au/omega/index.htm?countryIds=AU&sortorder=1&pageSize=60"
+    ]
+  }
 }

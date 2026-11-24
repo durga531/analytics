@@ -195,9 +195,16 @@ def scan_shopify(store, max_pages):
     return items
 
 
+def is_grail(brand, title, category, cfg):
+    if category != "watches" or "grail" not in cfg:
+        return False
+    hay = f"{brand} {title}".lower()
+    return any(re.search(r"(?<![a-z])" + re.escape(b) + r"(?![a-z])", hay) for b in cfg["grail"]["brands"])
+
+
 def is_priority(brand, title, category, cfg):
     hay = f"{brand} {title}".lower()
-    return any(b in hay for b in cfg["priority_brands"].get(category, []))
+    return any(re.search(r"(?<![a-z])" + re.escape(b) + r"(?![a-z])", hay) for b in cfg["priority_brands"].get(category, []))
 
 
 # ---------------------------------------------------------------- ozbargain
@@ -283,6 +290,27 @@ def main():
                     "drop_pct": round(drop * 100, 1), "advertised_rrp": it["c"],
                     "priority_brand": is_priority(it["b"], it["t"], cat, cfg),
                 })
+        if store.get("authorised") and "grail" in cfg:
+            g = cfg["grail"]
+            for pid, it in items.items():
+                c = it.get("c")
+                if not c or c <= it["p"] or it["p"] < g["min_price_aud"] * 0.5:
+                    continue
+                off = (1 - it["p"] / c) * 100
+                old = prev.get(pid)
+                if not old:  # baseline or newly listed: a standing sale, not a one-off
+                    continue
+                old_off = (1 - old["p"] / old["c"]) * 100 if old.get("c") and old["c"] > old["p"] else 0
+                if old_off >= g["min_dealer_markdown_pct"]:
+                    continue
+                if off >= g["min_dealer_markdown_pct"] and is_grail(it["b"], it["t"], cat, cfg):
+                    alerts.append({
+                        "type": "DEALER_MARKDOWN", "id": f"mkdn:{dom}:{pid}", "category": cat,
+                        "store": store["name"], "title": it["t"], "brand": it["b"], "url": it["u"],
+                        "price": it["p"], "advertised_rrp": c, "saving": round(c - it["p"], 2),
+                        "drop_pct": round(off, 1), "priority_brand": True,
+                        "note": "authorised dealer markdown (these rarely discount)",
+                    })
         current[dom] = items
 
     # ---- cross-retailer arbitrage
@@ -333,10 +361,21 @@ def main():
     def score(a):
         return a["saving"] * (2.0 if a.get("priority_brand") else 1.0) * (1.3 if a["type"] == "PRICE_DROP" else 1.0)
 
-    fresh.sort(key=score, reverse=True)
+    g = cfg.get("grail")
+    for a in fresh:
+        a["grail"] = False
+        if g and is_grail(a.get("brand", ""), a["title"], a["category"], cfg) and a["price"] + a["saving"] >= g["min_price_aud"]:
+            pct = a.get("gap_pct") or a.get("drop_pct") or 0
+            need = {"ARBITRAGE": g["min_gap_pct"], "PRICE_DROP": g["min_drop_pct"],
+                    "DEALER_MARKDOWN": g["min_dealer_markdown_pct"]}.get(a["type"], 999)
+            a["grail"] = pct >= need
+    fresh.sort(key=lambda a: (a["grail"], score(a)), reverse=True)
     per_cat = cfg.get("max_alerts_per_category", 6)
     top, used = [], {}
     for a in fresh:
+        if a["grail"]:
+            top.append(a)
+            continue
         if used.get(a["category"], 0) < per_cat and len(top) < cfg["max_alerts_per_run"]:
             top.append(a)
             used[a["category"]] = used.get(a["category"], 0) + 1
@@ -356,7 +395,7 @@ def main():
                    "alerts_total": len(fresh), "alerts_sent": len(top), "ozbargain": len(ozb)})
     save_json(STATE / "runs.json", runlog[-200:])
 
-    result = {"generated_at": now, "first_run": first_run, "store_stats": store_stats,
+    result = {"generated_at": now, "grail_count": sum(1 for a in top if a.get("grail")), "first_run": first_run, "store_stats": store_stats,
               "alerts": top, "alerts_suppressed_or_overflow": len(fresh) - len(top),
               "ozbargain": ozb[:25]}
     save_json(REPORTS / "latest.json", result)
@@ -369,11 +408,14 @@ def render_md(r):
     if r["first_run"]:
         L += ["_Baseline run: price-drop signals start next run. Arbitrage signals below are live._", ""]
     for a in r["alerts"]:
-        star = "★ " if a.get("priority_brand") else ""
+        star = "🔥 GRAIL " if a.get("grail") else ("★ " if a.get("priority_brand") else "")
         if a["type"] == "ARBITRAGE":
             L.append(f"- {star}**ARBITRAGE** [{a['title']}]({a['url']}) ${a['price']:.0f} at {a['store']} "
                      f"vs ${a['next_best_price']:.0f} at {a['next_best_store']} "
                      f"(save ${a['saving']:.0f}, {a['gap_pct']}%)")
+        elif a["type"] == "DEALER_MARKDOWN":
+            L.append(f"- {star}**DEALER MARKDOWN** [{a['title']}]({a['url']}) ${a['price']:.0f} at {a['store']}, "
+                     f"RRP ${a['advertised_rrp']:.0f} (-{a['drop_pct']}%)")
         else:
             L.append(f"- {star}**PRICE DROP** [{a['title']}]({a['url']}) ${a['price']:.0f} at {a['store']}, "
                      f"down from ${a['previous_low']:.0f} (-{a['drop_pct']}%, save ${a['saving']:.0f})")
