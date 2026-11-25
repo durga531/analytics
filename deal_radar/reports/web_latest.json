@@ -1,18 +1,5 @@
 {
-  "generated_at": "2026-11-25T09:53:18+00:00",
+  "generated_at": "2026-11-25T11:54:19+00:00",
   "input_rows": 193,
-  "findings": [
-    {
-      "type": "PRICE_DROP",
-      "id": "drop:https://www.chrono24.com.au/omega/de-ville-f300hz-chronometer--id49969952.htm",
-      "store": "Chrono24 AU",
-      "title": "Omega De Ville F300hz Chronometer",
-      "url": "https://www.chrono24.com.au/omega/de-ville-f300hz-chronometer--id49969952.htm",
-      "price": 1800.0,
-      "previous_low": 3200.0,
-      "saving": 1400.0,
-      "category": "watches",
-      "grail": true
-    }
-  ]
+  "findings": []
 }
