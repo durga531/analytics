@@ -673,5 +673,58 @@
     "alerts_total": 339,
     "alerts_sent": 12,
     "ozbargain": 0
+  },
+  {
+    "at": "2026-11-25T03:48:19+00:00",
+    "first_run": false,
+    "stores": {
+      "www.watchdepot.com.au": {
+        "items": 2112,
+        "baseline": false
+      },
+      "www.starbuy.com.au": {
+        "items": 866,
+        "baseline": false
+      },
+      "www.watchdirect.com.au": {
+        "items": 7994,
+        "baseline": false
+      },
+      "www.hardybrothers.com.au": {
+        "items": 1431,
+        "baseline": false
+      },
+      "houseofkennedy.com": {
+        "items": 1006,
+        "baseline": false
+      },
+      "www.monards.com.au": {
+        "items": 1829,
+        "baseline": false
+      },
+      "theperfumewarehouse.com.au": {
+        "items": 2300,
+        "baseline": false
+      },
+      "www.myperfumeshop.com.au": {
+        "items": 9967,
+        "baseline": false
+      },
+      "www.perfumeclearancecentre.com.au": {
+        "items": 1283,
+        "baseline": false
+      },
+      "www.culturekings.com.au": {
+        "items": 4134,
+        "baseline": false
+      },
+      "www.universalstore.com": {
+        "items": 8479,
+        "baseline": false
+      }
+    },
+    "alerts_total": 338,
+    "alerts_sent": 12,
+    "ozbargain": 0
   }
 ]
