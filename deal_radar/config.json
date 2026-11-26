@@ -246,7 +246,11 @@
       "patek",
       "rolex",
       "hublot",
-      "piaget"
+      "piaget",
+      "hamilton",
+      "baume & mercier",
+      "baume et mercier",
+      "baume"
     ],
     "min_drop_pct": 30,
     "min_gap_pct": 30,
