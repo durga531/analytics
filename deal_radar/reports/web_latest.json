@@ -1,5 +1,18 @@
 {
-  "generated_at": "2026-11-26T01:53:50+00:00",
+  "generated_at": "2026-11-26T03:53:53+00:00",
   "input_rows": 193,
-  "findings": []
+  "findings": [
+    {
+      "type": "PRICE_DROP",
+      "id": "drop:https://www.chrono24.com.au/longines/6b159--id50025956.htm",
+      "store": "Chrono24 AU",
+      "title": "Longines 6b/159 Original condition",
+      "url": "https://www.chrono24.com.au/longines/6b159--id50025956.htm",
+      "price": 2500.0,
+      "previous_low": 3000.0,
+      "saving": 500.0,
+      "category": "watches",
+      "grail": false
+    }
+  ]
 }
