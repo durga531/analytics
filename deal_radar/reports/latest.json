@@ -1,26 +1,26 @@
 {
-  "generated_at": "2026-11-26T07:49:08+00:00",
+  "generated_at": "2026-11-26T09:48:57+00:00",
   "grail_count": 0,
   "first_run": false,
   "store_stats": {
     "www.watchdepot.com.au": {
-      "items": 2113,
+      "items": 2114,
       "baseline": false
     },
     "www.starbuy.com.au": {
-      "items": 881,
+      "items": 880,
       "baseline": false
     },
     "www.watchdirect.com.au": {
-      "items": 7930,
+      "items": 7926,
       "baseline": false
     },
     "www.hardybrothers.com.au": {
-      "items": 1444,
+      "items": 1443,
       "baseline": false
     },
     "houseofkennedy.com": {
-      "items": 1006,
+      "items": 1005,
       "baseline": false
     },
     "www.monards.com.au": {
@@ -28,7 +28,7 @@
       "baseline": false
     },
     "theperfumewarehouse.com.au": {
-      "items": 2284,
+      "items": 2283,
       "baseline": false
     },
     "www.myperfumeshop.com.au": {
@@ -36,296 +36,299 @@
       "baseline": false
     },
     "www.perfumeclearancecentre.com.au": {
-      "items": 1289,
+      "items": 1287,
       "baseline": false
     },
     "www.culturekings.com.au": {
-      "items": 4082,
+      "items": 4068,
       "baseline": false
     },
     "www.universalstore.com": {
-      "items": 8623,
+      "items": 8619,
       "baseline": false
     }
   },
   "alerts": [
     {
       "type": "ARBITRAGE",
-      "id": "arb:houseofkennedy.com:8024894046269",
+      "id": "arb:houseofkennedy.com:8089403949117",
       "category": "watches",
       "store": "House of Kennedy",
-      "title": "Riviera 10810",
-      "brand": "Baume & Mercier",
-      "url": "https://houseofkennedy.com/products/riviera-10810-m0a10810",
-      "price": 2030.0,
-      "next_best_store": "Watch Direct",
-      "next_best_price": 2900.0,
-      "next_best_url": "https://www.watchdirect.com.au/products/baume-mercier-riviera-10810-quartz-date-display-womens-watch-33mm",
-      "saving": 870.0,
-      "gap_pct": 30.0,
-      "all_prices": {
-        "House of Kennedy": 2030.0,
-        "Watch Direct": 2900.0
-      },
-      "match_key": "ref:baume  mercier:M0A10810",
-      "advertised_rrp": 2900.0,
-      "priority_brand": false,
-      "grail": false
-    },
-    {
-      "type": "ARBITRAGE",
-      "id": "arb:houseofkennedy.com:8089403097149",
-      "category": "watches",
-      "store": "House of Kennedy",
-      "title": "Khaki Field Mechanical Power Reserve 40mm",
+      "title": "Khaki Field Auto 42mm",
       "brand": "HAMILTON",
-      "url": "https://houseofkennedy.com/products/khaki-field-mechanical-power-reserve-40mm-h69509910",
-      "price": 980.0,
-      "next_best_store": "Hardy Brothers",
-      "next_best_price": 1400.0,
-      "next_best_url": "https://www.hardybrothers.com.au/products/1ukhf012-hamilton-khaki-field-manual-power-reserve-40mm-watch-h69509910",
-      "saving": 420.0,
-      "gap_pct": 30.0,
-      "all_prices": {
-        "House of Kennedy": 980.0,
-        "Hardy Brothers": 1400.0
-      },
-      "match_key": "ref:hamilton:H69509910",
-      "advertised_rrp": 1400.0,
-      "priority_brand": true,
-      "grail": false
-    },
-    {
-      "type": "ARBITRAGE",
-      "id": "arb:houseofkennedy.com:8089403162685",
-      "category": "watches",
-      "store": "House of Kennedy",
-      "title": "Khaki Field Mechanical Power Reserve 40 mm",
-      "brand": "HAMILTON",
-      "url": "https://houseofkennedy.com/products/khaki-field-mechanical-power-reserve-40-mm-h69509930",
-      "price": 980.0,
-      "next_best_store": "Hardy Brothers",
-      "next_best_price": 1400.0,
-      "next_best_url": "https://www.hardybrothers.com.au/products/1ukhf011-hamilton-khaki-field-manual-power-reserve-40mm-watch-h69509930",
-      "saving": 420.0,
-      "gap_pct": 30.0,
-      "all_prices": {
-        "House of Kennedy": 980.0,
-        "Hardy Brothers": 1400.0
-      },
-      "match_key": "ref:hamilton:H69509930",
-      "advertised_rrp": 1400.0,
-      "priority_brand": true,
-      "grail": false
-    },
-    {
-      "type": "ARBITRAGE",
-      "id": "arb:houseofkennedy.com:8024893095997",
-      "category": "watches",
-      "store": "House of Kennedy",
-      "title": "Hampton 10673",
-      "brand": "Baume & Mercier",
-      "url": "https://houseofkennedy.com/products/hampton-10673-m0a10673",
-      "price": 1925.0,
-      "next_best_store": "Watch Direct",
-      "next_best_price": 2750.0,
-      "next_best_url": "https://www.watchdirect.com.au/products/baume-mercier-hampton-quartz-watch-2",
-      "saving": 825.0,
-      "gap_pct": 30.0,
-      "all_prices": {
-        "House of Kennedy": 1925.0,
-        "Watch Direct": 2750.0
-      },
-      "match_key": "ref:baume  mercier:M0A10673",
-      "advertised_rrp": 2750.0,
-      "priority_brand": false,
-      "grail": false
-    },
-    {
-      "type": "ARBITRAGE",
-      "id": "arb:houseofkennedy.com:8089402736701",
-      "category": "watches",
-      "store": "House of Kennedy",
-      "title": "Khaki Field King Day-Date 40mm",
-      "brand": "HAMILTON",
-      "url": "https://houseofkennedy.com/products/khaki-field-king-day-date-40mm-h64475131",
+      "url": "https://houseofkennedy.com/products/khaki-field-auto-42mm-h70605140",
       "price": 945.0,
       "next_best_store": "Hardy Brothers",
       "next_best_price": 1350.0,
-      "next_best_url": "https://www.hardybrothers.com.au/products/1ukhf022-hamilton-khaki-field-automatic-40mm-watch-h64475131",
+      "next_best_url": "https://www.hardybrothers.com.au/products/1ukhf016-hamilton-khaki-field-automatic-42mm-watch-h70605140",
       "saving": 405.0,
       "gap_pct": 30.0,
       "all_prices": {
         "House of Kennedy": 945.0,
         "Hardy Brothers": 1350.0
       },
-      "match_key": "ref:hamilton:H64475131",
+      "match_key": "ref:hamilton:H70605140",
       "advertised_rrp": 1350.0,
       "priority_brand": true,
       "grail": false
     },
     {
       "type": "ARBITRAGE",
-      "id": "arb:houseofkennedy.com:8089403523133",
+      "id": "arb:houseofkennedy.com:8089403785277",
       "category": "watches",
       "store": "House of Kennedy",
       "title": "Khaki Field Auto",
       "brand": "HAMILTON",
-      "url": "https://houseofkennedy.com/products/khaki-field-auto-h70455133",
+      "url": "https://houseofkennedy.com/products/khaki-field-auto-h70515137",
       "price": 945.0,
       "next_best_store": "Hardy Brothers",
       "next_best_price": 1350.0,
-      "next_best_url": "https://www.hardybrothers.com.au/products/1ukhf020-hamilton-khaki-field-automatic-38mm-watch-h70455133",
+      "next_best_url": "https://www.hardybrothers.com.au/products/1ukhf015-hamilton-khaki-field-automatic-42mm-watch-h70515137",
       "saving": 405.0,
       "gap_pct": 30.0,
       "all_prices": {
         "House of Kennedy": 945.0,
         "Hardy Brothers": 1350.0
       },
-      "match_key": "ref:hamilton:H70455133",
+      "match_key": "ref:hamilton:H70515137",
       "advertised_rrp": 1350.0,
       "priority_brand": true,
       "grail": false
     },
     {
       "type": "ARBITRAGE",
-      "id": "arb:theperfumewarehouse.com.au:8412878799098",
+      "id": "arb:houseofkennedy.com:8024893358141",
+      "category": "watches",
+      "store": "House of Kennedy",
+      "title": "Hampton 10760",
+      "brand": "Baume & Mercier",
+      "url": "https://houseofkennedy.com/products/hampton-10760-m0a10760",
+      "price": 1820.0,
+      "next_best_store": "Watch Direct",
+      "next_best_price": 2600.0,
+      "next_best_url": "https://www.watchdirect.com.au/products/baume-mercier-hampton-10760",
+      "saving": 780.0,
+      "gap_pct": 30.0,
+      "all_prices": {
+        "House of Kennedy": 1820.0,
+        "Watch Direct": 2600.0
+      },
+      "match_key": "ref:baume  mercier:M0A10760",
+      "advertised_rrp": 2600.0,
+      "priority_brand": false,
+      "grail": false
+    },
+    {
+      "type": "ARBITRAGE",
+      "id": "arb:houseofkennedy.com:8012174458941",
+      "category": "watches",
+      "store": "House of Kennedy",
+      "title": "A.R.T. Quartz 30mm",
+      "brand": "Raymond Weil",
+      "url": "https://houseofkennedy.com/products/a-r-t-quartz-30mm-1250-st-52001",
+      "price": 1820.0,
+      "next_best_store": "Watch Direct",
+      "next_best_price": 2600.0,
+      "next_best_url": "https://www.watchdirect.com.au/products/raymond-weil-a-r-t-sage-green-dial-integrated-stainless-steel-bracelet-quartz-watch-30mm-1250-st-52001",
+      "saving": 780.0,
+      "gap_pct": 30.0,
+      "all_prices": {
+        "House of Kennedy": 1820.0,
+        "Watch Direct": 2600.0
+      },
+      "match_key": "ref:raymond weil:1250ST52001",
+      "advertised_rrp": 2600.0,
+      "priority_brand": false,
+      "grail": false
+    },
+    {
+      "type": "ARBITRAGE",
+      "id": "arb:houseofkennedy.com:8024895750205",
+      "category": "watches",
+      "store": "House of Kennedy",
+      "title": "Classima 10874",
+      "brand": "Baume & Mercier",
+      "url": "https://houseofkennedy.com/products/classima-10874-m0a10874",
+      "price": 1715.0,
+      "next_best_store": "Watch Direct",
+      "next_best_price": 2450.0,
+      "next_best_url": "https://www.watchdirect.com.au/products/baume-mercier-classima-10874-automatic-watch-date-display-40mm",
+      "saving": 735.0,
+      "gap_pct": 30.0,
+      "all_prices": {
+        "House of Kennedy": 1715.0,
+        "Watch Direct": 2450.0
+      },
+      "match_key": "ref:baume  mercier:M0A10874",
+      "advertised_rrp": 2450.0,
+      "priority_brand": false,
+      "grail": false
+    },
+    {
+      "type": "ARBITRAGE",
+      "id": "arb:houseofkennedy.com:8024895029309",
+      "category": "watches",
+      "store": "House of Kennedy",
+      "title": "Joia de Baume & Mercier 10848",
+      "brand": "Baume & Mercier",
+      "url": "https://houseofkennedy.com/products/joia-de-baume-mercier-10848-m0a10848",
+      "price": 1715.0,
+      "next_best_store": "Watch Direct",
+      "next_best_price": 2450.0,
+      "next_best_url": "https://www.watchdirect.com.au/products/baume-mercier-joia-de-baume-mercier-10848-quartz-watch-28mm",
+      "saving": 735.0,
+      "gap_pct": 30.0,
+      "all_prices": {
+        "House of Kennedy": 1715.0,
+        "Watch Direct": 2450.0
+      },
+      "match_key": "ref:baume  mercier:M0A10848",
+      "advertised_rrp": 2450.0,
+      "priority_brand": false,
+      "grail": false
+    },
+    {
+      "type": "ARBITRAGE",
+      "id": "arb:theperfumewarehouse.com.au:8881294606586",
       "category": "perfume",
       "store": "The Perfume Warehouse",
-      "title": "Fame 80ml Eau De Parfum",
-      "brand": "PACO RABANNE",
-      "url": "https://theperfumewarehouse.com.au/products/fame-80ml-parfum-by-paco-rabanne-for-women-bottle",
-      "price": 149.0,
-      "next_best_store": "Perfume Clearance Centre",
-      "next_best_price": 189.95,
-      "next_best_url": "https://www.perfumeclearancecentre.com.au/products/paco-rabanne-fame-eau-de-parfum-100ml",
-      "saving": 40.95,
-      "gap_pct": 21.6,
-      "all_prices": {
-        "The Perfume Warehouse": 149.0,
-        "Perfume Clearance Centre": 189.95
-      },
-      "match_key": "pf:rabanne:fame:edp:80",
-      "advertised_rrp": 349.0,
-      "priority_brand": true,
-      "grail": false
-    },
-    {
-      "type": "ARBITRAGE",
-      "id": "arb:www.myperfumeshop.com.au:10300670017668:51743188844676",
-      "category": "perfume",
-      "store": "My Perfume Shop",
-      "title": "Versace Eros Najim Parfum for Men 100ml",
-      "brand": "Versace",
-      "url": "https://www.myperfumeshop.com.au/products/versace-eros-najim-parfum-for-men?variant=51743188844676",
-      "price": 179.0,
-      "next_best_store": "Perfume Clearance Centre",
-      "next_best_price": 219.95,
-      "next_best_url": "https://www.perfumeclearancecentre.com.au/products/versace-eros-najim-parfum-100ml",
-      "saving": 40.95,
-      "gap_pct": 18.6,
-      "all_prices": {
-        "My Perfume Shop": 179.0,
-        "Perfume Clearance Centre": 219.95
-      },
-      "match_key": "ean:8011003895755",
-      "advertised_rrp": null,
-      "priority_brand": true,
-      "grail": false
-    },
-    {
-      "type": "ARBITRAGE",
-      "id": "arb:www.myperfumeshop.com.au:8194397208708:44840550793348",
-      "category": "perfume",
-      "store": "My Perfume Shop",
-      "title": "Yves Saint Laurent Libre L'Absolu Platine Parfum 50ml",
-      "brand": "Yves Saint Laurent",
-      "url": "https://www.myperfumeshop.com.au/products/yves-saint-laurent-libre-labsolu-platine-parfum?variant=44840550793348",
-      "price": 179.0,
-      "next_best_store": "Perfume Clearance Centre",
-      "next_best_price": 219.95,
-      "next_best_url": "https://www.perfumeclearancecentre.com.au/products/yves-saint-laurent-libre-labsolu-platine-parfum-50ml",
-      "saving": 40.95,
-      "gap_pct": 18.6,
-      "all_prices": {
-        "My Perfume Shop": 179.0,
-        "Perfume Clearance Centre": 219.95
-      },
-      "match_key": "ean:3614273923859",
-      "advertised_rrp": 215.0,
-      "priority_brand": true,
-      "grail": false
-    },
-    {
-      "type": "ARBITRAGE",
-      "id": "arb:www.myperfumeshop.com.au:6602814881924:41821095166084",
-      "category": "perfume",
-      "store": "My Perfume Shop",
-      "title": "Gucci Guilty EDT For Men 150ml",
-      "brand": "Gucci",
-      "url": "https://www.myperfumeshop.com.au/products/gucci-guilty-for-men-edt?variant=41821095166084",
-      "price": 179.0,
-      "next_best_store": "The Perfume Warehouse",
-      "next_best_price": 219.9,
-      "next_best_url": "https://theperfumewarehouse.com.au/products/gucci-guilty-150ml-eau-de-toilette-by-gucci-for-men-bottle",
-      "saving": 40.9,
-      "gap_pct": 18.6,
-      "all_prices": {
-        "My Perfume Shop": 179.0,
-        "The Perfume Warehouse": 219.9
-      },
-      "match_key": "pf:gucci:guilty:edt:150",
-      "advertised_rrp": 205.0,
-      "priority_brand": true,
-      "grail": false
-    },
-    {
-      "type": "ARBITRAGE",
-      "id": "arb:www.myperfumeshop.com.au:7113838493828:41847293706372",
-      "category": "perfume",
-      "store": "My Perfume Shop",
-      "title": "Hugo Boss Hugo XY EDT 100ml",
-      "brand": "Hugo Boss",
-      "url": "https://www.myperfumeshop.com.au/products/hugo-boss-hugo-xy-edt?variant=41847293706372",
-      "price": 49.0,
-      "next_best_store": "The Perfume Warehouse",
-      "next_best_price": 89.9,
-      "next_best_url": "https://theperfumewarehouse.com.au/products/hugo-xy-by-hugo-boss-for-men-eau-de-toilette-bottle-hugo-xy-by-hugo-boss-for-men-eau-de-toilette-bottle",
-      "saving": 40.9,
-      "gap_pct": 45.5,
-      "all_prices": {
-        "My Perfume Shop": 49.0,
-        "The Perfume Warehouse": 89.9
-      },
-      "match_key": "pf:boss:xy:edt:100",
-      "advertised_rrp": 79.0,
-      "priority_brand": true,
-      "grail": false
-    },
-    {
-      "type": "ARBITRAGE",
-      "id": "arb:www.myperfumeshop.com.au:7187001999492:41666037842052",
-      "category": "perfume",
-      "store": "My Perfume Shop",
-      "title": "Carolina Herrera 212 VIP Rose EDP 80ml",
-      "brand": "Carolina Herrera",
-      "url": "https://www.myperfumeshop.com.au/products/carolina-herrera-212-vip-rose-edp-for-women?variant=41666037842052",
-      "price": 129.0,
-      "next_best_store": "The Perfume Warehouse",
-      "next_best_price": 169.0,
-      "next_best_url": "https://theperfumewarehouse.com.au/products/212-vip-rose-80ml-eau-de-parfum",
+      "title": "K Intense 100ml Eau De Parfum",
+      "brand": "DOLCE & GABBANA",
+      "url": "https://theperfumewarehouse.com.au/products/k-intense-100ml-eau-de-parfum",
+      "price": 109.0,
+      "next_best_store": "My Perfume Shop",
+      "next_best_price": 149.0,
+      "next_best_url": "https://www.myperfumeshop.com.au/products/dolce-gabbana-k-edp-intense-for-men?variant=41788633251972",
       "saving": 40.0,
-      "gap_pct": 23.7,
+      "gap_pct": 26.8,
       "all_prices": {
-        "My Perfume Shop": 129.0,
-        "The Perfume Warehouse": 169.0
+        "The Perfume Warehouse": 109.0,
+        "My Perfume Shop": 149.0,
+        "Perfume Clearance Centre": 149.95
       },
-      "match_key": "pf:carolinaherrera:212-rose-vip:edp:80",
-      "advertised_rrp": 189.0,
+      "match_key": "pf:dolcegabbana:k:edp-intense:100",
+      "advertised_rrp": 249.0,
       "priority_brand": true,
+      "grail": false
+    },
+    {
+      "type": "ARBITRAGE",
+      "id": "arb:www.myperfumeshop.com.au:8180979269764:44602911948932",
+      "category": "perfume",
+      "store": "My Perfume Shop",
+      "title": "Guerlain La Petite Robe Noire EDP Absolue 100ml",
+      "brand": "Guerlain",
+      "url": "https://www.myperfumeshop.com.au/products/guerlain-la-petite-robe-noire-edp-absolue?variant=44602911948932",
+      "price": 119.0,
+      "next_best_store": "The Perfume Warehouse",
+      "next_best_price": 199.0,
+      "next_best_url": "https://theperfumewarehouse.com.au/products/la-petite-robe-noire-absolue-100ml-eau-de-parfum",
+      "saving": 80.0,
+      "gap_pct": 40.2,
+      "all_prices": {
+        "My Perfume Shop": 119.0,
+        "The Perfume Warehouse": 199.0
+      },
+      "match_key": "pf:guerlain:absolue-la-noire-petite-robe:edp:100",
+      "advertised_rrp": 145.0,
+      "priority_brand": false,
+      "grail": false
+    },
+    {
+      "type": "ARBITRAGE",
+      "id": "arb:theperfumewarehouse.com.au:8495579726074",
+      "category": "perfume",
+      "store": "The Perfume Warehouse",
+      "title": "Donna Born In Roma 50ml Eau de Parfum",
+      "brand": "VALENTINO",
+      "url": "https://theperfumewarehouse.com.au/products/valentino-donna-born-in-roma-50ml-eau-de-parfum-by-valentino-for-women-bottle",
+      "price": 139.0,
+      "next_best_store": "My Perfume Shop",
+      "next_best_price": 179.0,
+      "next_best_url": "https://www.myperfumeshop.com.au/products/valentino-donna-born-in-roma-edp?variant=41704298348676",
+      "saving": 40.0,
+      "gap_pct": 22.3,
+      "all_prices": {
+        "The Perfume Warehouse": 139.0,
+        "My Perfume Shop": 179.0
+      },
+      "match_key": "pf:valentino:born-donna-in-roma:edp:50",
+      "advertised_rrp": 245.0,
+      "priority_brand": true,
+      "grail": false
+    },
+    {
+      "type": "ARBITRAGE",
+      "id": "arb:theperfumewarehouse.com.au:9119931269370",
+      "category": "perfume",
+      "store": "The Perfume Warehouse",
+      "title": "Good Girl Blush Elixir 80ml Eau De Parfum",
+      "brand": "CAROLINA HERRERA",
+      "url": "https://theperfumewarehouse.com.au/products/good-girl-blush-elixir-80ml-eau-de-parfum",
+      "price": 159.0,
+      "next_best_store": "My Perfume Shop",
+      "next_best_price": 199.0,
+      "next_best_url": "https://www.myperfumeshop.com.au/products/carolina-herrera-good-girl-blush-elixir-edp?variant=52374752592004",
+      "saving": 40.0,
+      "gap_pct": 20.1,
+      "all_prices": {
+        "The Perfume Warehouse": 159.0,
+        "My Perfume Shop": 199.0,
+        "Perfume Clearance Centre": 245.0
+      },
+      "match_key": "pf:carolinaherrera:blush-girl-good:edp-elixir:80",
+      "advertised_rrp": 336.0,
+      "priority_brand": true,
+      "grail": false
+    },
+    {
+      "type": "ARBITRAGE",
+      "id": "arb:theperfumewarehouse.com.au:7733147533562",
+      "category": "perfume",
+      "store": "The Perfume Warehouse",
+      "title": "Scandal 80ml Eau de Parfum",
+      "brand": "JEAN PAUL GAULTIER",
+      "url": "https://theperfumewarehouse.com.au/products/scandal-80ml-eau-de-parfum-by-jean-paul-gaultier-for-women-bottle",
+      "price": 159.0,
+      "next_best_store": "My Perfume Shop",
+      "next_best_price": 199.0,
+      "next_best_url": "https://www.myperfumeshop.com.au/products/jean-paul-gaultier-scandal-edp?variant=41633131036804",
+      "saving": 40.0,
+      "gap_pct": 20.1,
+      "all_prices": {
+        "The Perfume Warehouse": 159.0,
+        "My Perfume Shop": 199.0,
+        "Perfume Clearance Centre": 199.0
+      },
+      "match_key": "pf:jeanpaulgaultier:scandal:edp:80",
+      "advertised_rrp": 245.0,
+      "priority_brand": true,
+      "grail": false
+    },
+    {
+      "type": "ARBITRAGE",
+      "id": "arb:www.myperfumeshop.com.au:7214266548356:41705566797956",
+      "category": "perfume",
+      "store": "My Perfume Shop",
+      "title": "Juliette Has A Gun Ego Stratis EDP 100ml",
+      "brand": "Juliette Has A Gun",
+      "url": "https://www.myperfumeshop.com.au/products/juliette-has-a-gun-ego-stratis-edp?variant=41705566797956",
+      "price": 155.0,
+      "next_best_store": "The Perfume Warehouse",
+      "next_best_price": 235.0,
+      "next_best_url": "https://theperfumewarehouse.com.au/products/ego-stratis100ml-eau-de-parfum-by-juliette-has-a-gun-for-women-bottle",
+      "saving": 80.0,
+      "gap_pct": 34.0,
+      "all_prices": {
+        "My Perfume Shop": 155.0,
+        "The Perfume Warehouse": 235.0
+      },
+      "match_key": "pf:juliettehasagun:ego-stratis:edp:100",
+      "advertised_rrp": 155.0,
+      "priority_brand": false,
       "grail": false
     }
   ],
-  "alerts_suppressed_or_overflow": 292,
+  "alerts_suppressed_or_overflow": 279,
   "ozbargain": []
 }
