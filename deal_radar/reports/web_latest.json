@@ -1,20 +1,5 @@
 {
-  "generated_at": "2026-11-27T05:53:34+00:00",
+  "generated_at": "2026-11-27T07:54:08+00:00",
   "input_rows": 193,
-  "findings": [
-    {
-      "type": "BELOW_FLOOR",
-      "id": "floor:https://www.chrono24.com.au/longines/ultra-chron--id49880522.htm",
-      "store": "Chrono24 AU",
-      "title": "Longines Ultra Chron Watch only",
-      "url": "https://www.chrono24.com.au/longines/ultra-chron--id49880522.htm",
-      "price": 495.0,
-      "floor": 600,
-      "saving": 105.0,
-      "category": "watches",
-      "condition": "pre-owned",
-      "grail": true,
-      "verify": "Open this listing page and confirm it is a genuine, complete, working watch (not parts, strap, box, replica) before notifying."
-    }
-  ]
+  "findings": []
 }
