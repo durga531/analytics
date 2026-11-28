@@ -1,0 +1,332 @@
+{
+  "generated_at": "2026-11-27T11:48:55+00:00",
+  "grail_count": 0,
+  "first_run": false,
+  "store_stats": {
+    "www.watchdepot.com.au": {
+      "items": 2111,
+      "baseline": false
+    },
+    "www.starbuy.com.au": {
+      "items": 883,
+      "baseline": false
+    },
+    "www.watchdirect.com.au": {
+      "items": 7852,
+      "baseline": false
+    },
+    "www.hardybrothers.com.au": {
+      "items": 1445,
+      "baseline": false
+    },
+    "houseofkennedy.com": {
+      "items": 984,
+      "baseline": false
+    },
+    "www.monards.com.au": {
+      "items": 1877,
+      "baseline": false
+    },
+    "theperfumewarehouse.com.au": {
+      "items": 2271,
+      "baseline": false
+    },
+    "www.myperfumeshop.com.au": {
+      "items": 9605,
+      "baseline": false
+    },
+    "www.perfumeclearancecentre.com.au": {
+      "items": 1289,
+      "baseline": false
+    },
+    "www.culturekings.com.au": {
+      "items": 3982,
+      "baseline": false
+    },
+    "www.universalstore.com": {
+      "items": 8169,
+      "baseline": false
+    }
+  },
+  "alerts": [
+    {
+      "type": "ARBITRAGE",
+      "id": "arb:www.starbuy.com.au:10395166539962",
+      "category": "watches",
+      "store": "Starbuy",
+      "title": "Oris Aquis Kelp Forest Limited Edition 41.5mm 01 733 7787 4187-Set",
+      "brand": "Oris",
+      "url": "https://www.starbuy.com.au/products/oris-aquis-kelp-forest-limited-edition-01-733-7787-4187-set-mens-dive-watch",
+      "price": 3599.0,
+      "next_best_store": "Hardy Brothers",
+      "next_best_price": 4300.0,
+      "next_best_url": "https://www.hardybrothers.com.au/products/oris-kelp-forest-aquis-automatic-41-50mm-watch-733-7787-4187set",
+      "saving": 701.0,
+      "gap_pct": 16.3,
+      "all_prices": {
+        "Starbuy": 3599.0,
+        "Hardy Brothers": 4300.0
+      },
+      "match_key": "ref:oris:4187SET",
+      "advertised_rrp": 4300.0,
+      "priority_brand": true,
+      "grail": false
+    },
+    {
+      "type": "ARBITRAGE",
+      "id": "arb:www.starbuy.com.au:8485400019130",
+      "category": "watches",
+      "store": "Starbuy",
+      "title": "Citizen Eco-Drive Calendrier 41.8mm BU0080-52X",
+      "brand": "Citizen",
+      "url": "https://www.starbuy.com.au/products/citizen-calendrier-bu0080-52x-mens-eco-drive-moonphase-watch",
+      "price": 599.0,
+      "next_best_store": "Watch Direct",
+      "next_best_price": 725.0,
+      "next_best_url": "https://www.watchdirect.com.au/products/citizen-calendrier-moonphase-pink-dial-stainless-steel-watch-bu0080-52x",
+      "saving": 126.0,
+      "gap_pct": 17.4,
+      "all_prices": {
+        "Starbuy": 599.0,
+        "Watch Direct": 725.0
+      },
+      "match_key": "ref:citizen:BU008052X",
+      "advertised_rrp": 1199.0,
+      "priority_brand": true,
+      "grail": false
+    },
+    {
+      "type": "ARBITRAGE",
+      "id": "arb:www.watchdirect.com.au:8042625466543",
+      "category": "watches",
+      "store": "Watch Direct",
+      "title": "Luminox Red Bull Original Navy Seal Blue Dial Watch XS.3581.EY.ARB",
+      "brand": "Luminox",
+      "url": "https://www.watchdirect.com.au/products/luminox-red-bull-original-navy-seal-blue-dial-watch-xs-3581-ey-arb",
+      "price": 599.0,
+      "next_best_store": "Watch Depot",
+      "next_best_price": 849.0,
+      "next_best_url": "https://www.watchdepot.com.au/products/luminox-original-navy-seal-red-bull-ampol-xs-3581-ey-arb-limited-edition-30272181",
+      "saving": 250.0,
+      "gap_pct": 29.4,
+      "all_prices": {
+        "Watch Direct": 599.0,
+        "Watch Depot": 849.0
+      },
+      "match_key": "ref:luminox:XS3581EYARB",
+      "advertised_rrp": 999.0,
+      "priority_brand": false,
+      "grail": false
+    },
+    {
+      "type": "ARBITRAGE",
+      "id": "arb:www.starbuy.com.au:8137527886010",
+      "category": "watches",
+      "store": "Starbuy",
+      "title": "Seiko Prospex King Turtle 45mm SRPK01K",
+      "brand": "Seiko",
+      "url": "https://www.starbuy.com.au/products/seiko-king-turtle-padi-mens-watch-srpk01k",
+      "price": 589.0,
+      "next_best_store": "Watch Depot",
+      "next_best_price": 706.0,
+      "next_best_url": "https://www.watchdepot.com.au/products/seiko-prospex-srpk01k-special-edition-king-turtle-watch-30265711",
+      "saving": 117.0,
+      "gap_pct": 16.6,
+      "all_prices": {
+        "Starbuy": 589.0,
+        "Watch Depot": 706.0,
+        "Watch Direct": 839.0
+      },
+      "match_key": "ref:seiko:SRPK01",
+      "advertised_rrp": 995.0,
+      "priority_brand": true,
+      "grail": false
+    },
+    {
+      "type": "ARBITRAGE",
+      "id": "arb:www.watchdepot.com.au:7855626420457",
+      "category": "watches",
+      "store": "Watch Depot",
+      "title": "Seiko Presage SSA441J Automatic",
+      "brand": "Seiko",
+      "url": "https://www.watchdepot.com.au/products/seiko-presage-ssa441j-automatic-30262197",
+      "price": 592.0,
+      "next_best_store": "Watch Direct",
+      "next_best_price": 709.0,
+      "next_best_url": "https://www.watchdirect.com.au/products/seiko-presage-automatic-grasshoper-watch-ssa441j",
+      "saving": 117.0,
+      "gap_pct": 16.5,
+      "all_prices": {
+        "Watch Depot": 592.0,
+        "Watch Direct": 709.0
+      },
+      "match_key": "ref:seiko:SSA441",
+      "advertised_rrp": 850.0,
+      "priority_brand": true,
+      "grail": false
+    },
+    {
+      "type": "ARBITRAGE",
+      "id": "arb:www.watchdepot.com.au:8916067844329",
+      "category": "watches",
+      "store": "Watch Depot",
+      "title": "Citizen AN8233-51E Chronograph",
+      "brand": "Citizen",
+      "url": "https://www.watchdepot.com.au/products/citizen-an8233-51e-chronograph-30272049",
+      "price": 233.0,
+      "next_best_store": "Watch Direct",
+      "next_best_price": 349.0,
+      "next_best_url": "https://www.watchdirect.com.au/products/citizen-quartz-sports-chronograph-black-dial-gold-tone-mens-watch-an8233-51e",
+      "saving": 116.0,
+      "gap_pct": 33.2,
+      "all_prices": {
+        "Watch Depot": 233.0,
+        "Watch Direct": 349.0
+      },
+      "match_key": "ref:citizen:AN823351E",
+      "advertised_rrp": 550.0,
+      "priority_brand": true,
+      "grail": false
+    },
+    {
+      "type": "ARBITRAGE",
+      "id": "arb:www.myperfumeshop.com.au:7291660796036",
+      "category": "perfume",
+      "store": "My Perfume Shop",
+      "title": "Calvin Klein Eternity Air EDT",
+      "brand": "Calvin Klein",
+      "url": "https://www.myperfumeshop.com.au/products/calvin-klein-eternity-air-edt",
+      "price": 45.0,
+      "next_best_store": "The Perfume Warehouse",
+      "next_best_price": 89.9,
+      "next_best_url": "https://theperfumewarehouse.com.au/products/eternity-air-by-calvin-klein-for-men-eau-de-toilette-bottle",
+      "saving": 44.9,
+      "gap_pct": 49.9,
+      "all_prices": {
+        "My Perfume Shop": 45.0,
+        "The Perfume Warehouse": 89.9
+      },
+      "match_key": "pf:calvinklein:air-eternity:edt:100",
+      "advertised_rrp": 75.0,
+      "priority_brand": false,
+      "grail": false
+    },
+    {
+      "type": "ARBITRAGE",
+      "id": "arb:www.myperfumeshop.com.au:7248249389188",
+      "category": "perfume",
+      "store": "My Perfume Shop",
+      "title": "Armaf Space Age EDP",
+      "brand": "Armaf",
+      "url": "https://www.myperfumeshop.com.au/products/armaf-space-age-edp",
+      "price": 45.0,
+      "next_best_store": "The Perfume Warehouse",
+      "next_best_price": 89.9,
+      "next_best_url": "https://theperfumewarehouse.com.au/products/space-age-100ml-eau-de-parfum-by-armaf-for-unisex-bottle",
+      "saving": 44.9,
+      "gap_pct": 49.9,
+      "all_prices": {
+        "My Perfume Shop": 45.0,
+        "The Perfume Warehouse": 89.9
+      },
+      "match_key": "pf:armaf:age-space:edp:100",
+      "advertised_rrp": 69.0,
+      "priority_brand": false,
+      "grail": false
+    },
+    {
+      "type": "ARBITRAGE",
+      "id": "arb:www.myperfumeshop.com.au:7248249684100",
+      "category": "perfume",
+      "store": "My Perfume Shop",
+      "title": "Armaf Venetian Girl Edition Rogue EDP",
+      "brand": "Armaf",
+      "url": "https://www.myperfumeshop.com.au/products/armaf-venetian-girl-edition-rogue-edp",
+      "price": 35.0,
+      "next_best_store": "The Perfume Warehouse",
+      "next_best_price": 79.9,
+      "next_best_url": "https://theperfumewarehouse.com.au/products/venetian-girl-edition-rogue-100ml-eau-de-parfum-by-armaf-for-men-bottle",
+      "saving": 44.9,
+      "gap_pct": 56.2,
+      "all_prices": {
+        "My Perfume Shop": 35.0,
+        "The Perfume Warehouse": 79.9
+      },
+      "match_key": "pf:armaf:edition-girl-rogue-venetian:edp:100",
+      "advertised_rrp": 59.0,
+      "priority_brand": false,
+      "grail": false
+    },
+    {
+      "type": "ARBITRAGE",
+      "id": "arb:www.myperfumeshop.com.au:7233041662084",
+      "category": "perfume",
+      "store": "My Perfume Shop",
+      "title": "Armaf Ego Tigre EDP",
+      "brand": "Armaf",
+      "url": "https://www.myperfumeshop.com.au/products/armaf-ego-tigre-edp",
+      "price": 45.0,
+      "next_best_store": "The Perfume Warehouse",
+      "next_best_price": 89.9,
+      "next_best_url": "https://theperfumewarehouse.com.au/products/ego-tigre-100ml-eau-de-parfum-by-armaf-for-men-bottle",
+      "saving": 44.9,
+      "gap_pct": 49.9,
+      "all_prices": {
+        "My Perfume Shop": 45.0,
+        "The Perfume Warehouse": 89.9
+      },
+      "match_key": "pf:armaf:ego-tigre:edp:100",
+      "advertised_rrp": 69.0,
+      "priority_brand": false,
+      "grail": false
+    },
+    {
+      "type": "ARBITRAGE",
+      "id": "arb:www.perfumeclearancecentre.com.au:15529337356660",
+      "category": "perfume",
+      "store": "Perfume Clearance Centre",
+      "title": "Tommy Hilfiger Tommy Girl Forever Eau De Toilette 100ml",
+      "brand": "Tommy Hilfiger",
+      "url": "https://www.perfumeclearancecentre.com.au/products/tommy-hilfiger-tommy-girl-forever-eau-de-toilette-100ml",
+      "price": 44.95,
+      "next_best_store": "My Perfume Shop",
+      "next_best_price": 89.0,
+      "next_best_url": "https://www.myperfumeshop.com.au/products/tommy-hilfiger-tommy-girl-forever-edt-for-women?variant=51392180125828",
+      "saving": 44.05,
+      "gap_pct": 49.5,
+      "all_prices": {
+        "Perfume Clearance Centre": 44.95,
+        "My Perfume Shop": 89.0
+      },
+      "match_key": "ean:7640496672010",
+      "advertised_rrp": 95.0,
+      "priority_brand": false,
+      "grail": false
+    },
+    {
+      "type": "ARBITRAGE",
+      "id": "arb:www.myperfumeshop.com.au:9998941552772:50512781213828",
+      "category": "perfume",
+      "store": "My Perfume Shop",
+      "title": "Akro Night EDP 100ml",
+      "brand": "Akro",
+      "url": "https://www.myperfumeshop.com.au/products/akro-night-edp?variant=50512781213828",
+      "price": 155.0,
+      "next_best_store": "The Perfume Warehouse",
+      "next_best_price": 199.0,
+      "next_best_url": "https://theperfumewarehouse.com.au/products/night-100ml-eau-de-parfum",
+      "saving": 44.0,
+      "gap_pct": 22.1,
+      "all_prices": {
+        "My Perfume Shop": 155.0,
+        "The Perfume Warehouse": 199.0
+      },
+      "match_key": "pf:akro:night:edp:100",
+      "advertised_rrp": 219.0,
+      "priority_brand": false,
+      "grail": false
+    }
+  ],
+  "alerts_suppressed_or_overflow": 178,
+  "ozbargain": []
+}

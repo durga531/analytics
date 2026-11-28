@@ -1,0 +1,285 @@
+{
+  "end_date_sydney": "2026-11-28",
+  "shopify_stores": [
+    {
+      "name": "Watch Depot",
+      "domain": "www.watchdepot.com.au",
+      "category": "watches"
+    },
+    {
+      "name": "Starbuy",
+      "domain": "www.starbuy.com.au",
+      "category": "watches"
+    },
+    {
+      "name": "Watch Direct",
+      "domain": "www.watchdirect.com.au",
+      "category": "watches"
+    },
+    {
+      "name": "Hardy Brothers",
+      "domain": "www.hardybrothers.com.au",
+      "category": "watches",
+      "authorised": true
+    },
+    {
+      "name": "House of Kennedy",
+      "domain": "houseofkennedy.com",
+      "category": "watches",
+      "authorised": true
+    },
+    {
+      "name": "Monards",
+      "domain": "www.monards.com.au",
+      "category": "watches",
+      "authorised": true
+    },
+    {
+      "name": "The Perfume Warehouse",
+      "domain": "theperfumewarehouse.com.au",
+      "category": "perfume"
+    },
+    {
+      "name": "My Perfume Shop",
+      "domain": "www.myperfumeshop.com.au",
+      "category": "perfume"
+    },
+    {
+      "name": "Perfume Clearance Centre",
+      "domain": "www.perfumeclearancecentre.com.au",
+      "category": "perfume"
+    },
+    {
+      "name": "Culture Kings",
+      "domain": "www.culturekings.com.au",
+      "category": "clothes"
+    },
+    {
+      "name": "Universal Store",
+      "domain": "www.universalstore.com",
+      "category": "clothes"
+    }
+  ],
+  "max_pages_per_store": 80,
+  "thresholds": {
+    "watches": {
+      "min_drop_pct": 10,
+      "min_saving_aud": 40,
+      "min_price_aud": 120
+    },
+    "perfume": {
+      "min_drop_pct": 15,
+      "min_saving_aud": 20,
+      "min_price_aud": 40
+    },
+    "clothes": {
+      "min_drop_pct": 30,
+      "min_saving_aud": 30,
+      "min_price_aud": 50
+    }
+  },
+  "arbitrage": {
+    "min_gap_pct": 15,
+    "min_gap_aud": 40
+  },
+  "realert_extra_drop_pct": 5,
+  "max_alerts_per_run": 18,
+  "priority_brands": {
+    "watches": [
+      "seiko",
+      "grand seiko",
+      "tissot",
+      "hamilton",
+      "longines",
+      "tag heuer",
+      "oris",
+      "citizen",
+      "orient",
+      "mido",
+      "certina",
+      "rado",
+      "frederique constant",
+      "bulova",
+      "g-shock",
+      "casio",
+      "victorinox",
+      "garmin",
+      "tudor",
+      "omega"
+    ],
+    "perfume": [
+      "dior",
+      "chanel",
+      "yves saint laurent",
+      "ysl",
+      "giorgio armani",
+      "armani",
+      "tom ford",
+      "creed",
+      "parfums de marly",
+      "versace",
+      "prada",
+      "valentino",
+      "jean paul gaultier",
+      "maison margiela",
+      "montblanc",
+      "hugo boss",
+      "dolce",
+      "carolina herrera",
+      "xerjoff",
+      "initio",
+      "mancera",
+      "montale",
+      "givenchy",
+      "paco rabanne",
+      "rabanne",
+      "azzaro",
+      "burberry",
+      "gucci",
+      "hermes"
+    ],
+    "clothes": [
+      "nike",
+      "adidas",
+      "new balance",
+      "carhartt",
+      "stussy",
+      "ralph lauren",
+      "polo",
+      "tommy hilfiger",
+      "calvin klein",
+      "levi",
+      "the north face",
+      "lacoste",
+      "nudie",
+      "ksubi",
+      "rolla"
+    ]
+  },
+  "ozbargain": {
+    "feeds": [],
+    "keywords": [
+      "watch",
+      "seiko",
+      "tissot",
+      "hamilton",
+      "citizen",
+      "orient",
+      "casio",
+      "g-shock",
+      "garmin",
+      "longines",
+      "perfume",
+      "fragrance",
+      "cologne",
+      "edp",
+      "edt",
+      "parfum",
+      "eau de",
+      "chemist warehouse",
+      "myer",
+      "david jones",
+      "the iconic",
+      "angus",
+      "prouds",
+      "goldmark",
+      "michael hill",
+      "starbuy",
+      "watch depot",
+      "watch direct",
+      "sephora",
+      "mecca",
+      "adore beauty",
+      "nike",
+      "adidas",
+      "new balance",
+      "ralph lauren",
+      "levi",
+      "uniqlo",
+      "culture kings",
+      "universal store",
+      "cettire",
+      "farfetch",
+      "ssense",
+      "longines",
+      "grand seiko",
+      "tudor",
+      "omega",
+      "tag heuer",
+      "nomos",
+      "iwc",
+      "oris",
+      "breitling",
+      "chrono24"
+    ],
+    "min_votes_for_generic": 15,
+    "note": "Direct RSS is blocked (403) from the cloud runner; the scheduled agent reads OzBargain via the Firecrawl Alexandria provider ozbargain-com-au instead, using these keywords."
+  },
+  "max_alerts_per_category": 6,
+  "grail": {
+    "note": "Owner wants Longines / Grand Seiko tier watches at one-off throwaway prices. Only grail alerts trigger a phone push.",
+    "brands": [
+      "longines",
+      "grand seiko",
+      "credor",
+      "tudor",
+      "omega",
+      "iwc",
+      "jaeger-lecoultre",
+      "jaeger lecoultre",
+      "zenith",
+      "nomos",
+      "glashutte original",
+      "glashütte original",
+      "breitling",
+      "cartier",
+      "blancpain",
+      "breguet",
+      "panerai",
+      "tag heuer",
+      "oris",
+      "chopard",
+      "a. lange",
+      "lange & sohne",
+      "vacheron",
+      "audemars",
+      "patek",
+      "rolex",
+      "hublot",
+      "piaget",
+      "hamilton",
+      "baume & mercier",
+      "baume et mercier",
+      "baume"
+    ],
+    "min_drop_pct": 30,
+    "min_gap_pct": 30,
+    "min_dealer_markdown_pct": 40,
+    "preowned_min_gap_pct": 45,
+    "min_price_aud": 1500,
+    "standing_sale_rule": "A dealer markdown only counts if the item was not already marked down that deep at the previous scan.",
+    "absolute_floor_aud": {
+      "grand seiko": 2000,
+      "credor": 2500,
+      "longines": 600,
+      "tudor": 2000,
+      "omega": 1200,
+      "iwc": 2000,
+      "jaeger-lecoultre": 2500,
+      "zenith": 2000,
+      "nomos": 1200,
+      "breitling": 1500,
+      "cartier": 1500,
+      "tag heuer": 700,
+      "oris": 800,
+      "rolex": 4000
+    },
+    "absolute_floor_note": "Reasoned estimates of a 'too cheap to be normal' AU price for a genuine, working watch of that brand. Tune freely. A listing below its floor is verified on its own page before any push.",
+    "chrono24_pages": [
+      "https://www.chrono24.com.au/grandseiko/index.htm?countryIds=AU&sortorder=1&pageSize=60",
+      "https://www.chrono24.com.au/longines/index.htm?countryIds=AU&sortorder=1&pageSize=60",
+      "https://www.chrono24.com.au/tudor/index.htm?countryIds=AU&sortorder=1&pageSize=60",
+      "https://www.chrono24.com.au/omega/index.htm?countryIds=AU&sortorder=1&pageSize=60"
+    ]
+  }
+}
